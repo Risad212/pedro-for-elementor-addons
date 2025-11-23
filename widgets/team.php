@@ -189,6 +189,8 @@ class PedroEA_Team extends Widget_Base {
 			]
 		);
 
+
+
 		$repeater->add_control(
 			'social_link',
 			[
@@ -726,6 +728,7 @@ class PedroEA_Team extends Widget_Base {
     }
 
    protected function render(): void {
+
     $settings = $this->get_settings_for_display();
 
     // Team image
@@ -742,39 +745,23 @@ class PedroEA_Team extends Widget_Base {
             <img <?php echo wp_kses_post( $this->get_render_attribute_string( 'team_image_attr' ) ); ?>>
             <div class="pea-social-media">
 			<?php if ( ! empty( $settings['show_social_profile'] ) ) : ?>
-				<ul class="pea-social-media">
-					<?php foreach ( $settings['social_list'] as $item ) :
+			 <ul class="pea-social-media">
+               <?php foreach ( $settings['social_list'] as $item ) : ?>
+               <?php
+                  $icon = $item['social_icon'];
+                  $link = $item['social_link']['url'] ?? '#';
+               ?>
 
-						// Ensure a valid icon exists
-						$icon = $item['social_icon'] ?? [
-							'value'   => 'fab fa-facebook-f',
-							'library' => 'fa-brands',
-						];
-
-						// If 'value' is empty, force Facebook fallback
-						if ( empty( $icon['value'] ) ) {
-							$icon = [
-								'value'   => 'fab fa-facebook-f',
-								'library' => 'fa-brands',
-							];
-						}
-
-						// Ensure link exists
-						$link = $item['social_link']['url'] ?? '#';
-					?>
-						<li <?php echo $this->get_render_attribute_string( 'social_item_attr' ); ?>>
-							<a href="<?php echo esc_url( $link ); ?>">
-								<?php 
-								// Render the icon safely
-								if ( ! empty( $icon['value'] ) ) {
-									echo Icons_Manager::render_icon( $icon, [ 'aria-hidden' => 'true' ] );
-								}
-								?>
-							</a>
-						</li>
-					<?php endforeach; ?>
-				</ul>
-			<?php endif; ?>
+				<li <?php $this->print_render_attribute_string( 'social_item_attr' ); ?>>
+					<a href="<?php echo esc_url( $link ); ?>">
+					<?php Icons_Manager::render_icon(
+							$icon,[ 'aria-hidden' => 'true',]
+						);?>
+					</a>
+				</li>
+            <?php endforeach; ?>
+         </ul>
+		<?php endif; ?>
 		</div>
         </div>
         <div class="pea-card-content">
