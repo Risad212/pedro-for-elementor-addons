@@ -767,7 +767,10 @@ class PedroEA_Team extends Widget_Base {
         <div class="pea-card-content">
             <h4 class="pea-team-title"><a href="#"><?php echo esc_html( $settings['team_name'] ?? 'Ema Jackson' ); ?></a></h4>
             <div class="pea-team-position"><?php echo esc_html( $settings['job_title'] ?? 'Project Manager' ); ?></div>
-            <p class="pea-short-disc"><?php echo esc_html( $settings['team_bio'] ?? 'A small river named Duden flows by their place and supplies it with the necessary' ); ?></p>
+            <p class="pea-short-disc">
+				<?php echo esc_html( ! empty( $settings['team_bio'] ) ? $settings['team_bio'] : 'A small river named Duden flows by their place and supplies it with the necessary' ); ?>
+			</p>
+
         </div>
     </div>
     <?php
