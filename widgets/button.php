@@ -49,7 +49,6 @@ class PedroEA_Button extends Widget_Base {
    // Start content controls
    protected function register_controls() {
 
-
        $this->start_controls_section(
            'section_title',
            [
@@ -62,9 +61,9 @@ class PedroEA_Button extends Widget_Base {
        $this->add_control(
            'button_text',
            [
-               'label'   => esc_html__( 'Text', 'pedro-for-elementor-addons' ),
+               'label'   => __( 'Text', 'pedro-for-elementor-addons' ),
                'type'    => Controls_Manager::TEXT,
-               'default' => esc_html__( 'Know More', 'pedro-for-elementor-addons' ),
+               'default' => __( 'Know More', 'pedro-for-elementor-addons' ),
            ]
        );
 
@@ -72,11 +71,11 @@ class PedroEA_Button extends Widget_Base {
        $this->add_control(
            'button_link',
            [
-               'label'   => esc_html__( 'Link', 'pedro-for-elementor-addons' ),
-               'type'    => Controls_Manager::URL,
-               'options' => [ 'url', 'is_external', 'nofollow' ],
-               'default' => [
-                   'url' => '#',
+               'label'           => __( 'Link', 'pedro-for-elementor-addons' ),
+               'type'            => Controls_Manager::URL,
+               'options'         => [ 'url', 'is_external', 'nofollow' ],
+               'default'         => [
+                   'url'         => '#',
                    'is_external' => true,
                    'nofollow'    => true,
                ],
@@ -87,10 +86,10 @@ class PedroEA_Button extends Widget_Base {
         $this->add_control(
 			'pea_button_blend_toggle',
 			[
-				'label'        => esc_html__( 'Text Blend', 'pedro-for-elementor-addons' ),
+				'label'        => __( 'Text Blend', 'pedro-for-elementor-addons' ),
 				'type'         => Controls_Manager::SWITCHER,
-				'label_on'     => esc_html__( 'On', 'pedro-for-elementor-addons' ),
-				'label_off'    => esc_html__( 'Off', 'pedro-for-elementor-addons' ),
+				'label_on'     => __( 'On', 'pedro-for-elementor-addons' ),
+				'label_off'    => __( 'Off', 'pedro-for-elementor-addons' ),
 				'return_value' => 'yes',
 				'default'      => 'yes',
 			]
@@ -104,7 +103,7 @@ class PedroEA_Button extends Widget_Base {
        $this->start_controls_section(
            'style_section',
            [
-               'label'   => esc_html__( 'Style', 'pedro-for-elementor-addons' ),
+               'label'   => __( 'Style', 'pedro-for-elementor-addons' ),
                'tab'     => Controls_Manager::TAB_STYLE,
            ]
        );
@@ -135,7 +134,7 @@ class PedroEA_Button extends Widget_Base {
        $this->start_controls_tab(
            'style_normal_tab',
            [
-               'label'     => esc_html__( 'Normal', 'pedro-for-elementor-addons' ),
+               'label'     => __( 'Normal', 'pedro-for-elementor-addons' ),
            ]
        );
 
@@ -143,7 +142,7 @@ class PedroEA_Button extends Widget_Base {
         $this->add_control(
            'text-color',
            [
-               'label'     => esc_html__( 'Text Color', 'pedro-for-elementor-addons' ),
+               'label'     => __( 'Text Color', 'pedro-for-elementor-addons' ),
                'type'      => Controls_Manager::COLOR,
                'selectors' => [
                    '{{WRAPPER}} .pea-button' => 'color: {{VALUE}}',
@@ -169,7 +168,7 @@ class PedroEA_Button extends Widget_Base {
        $this->start_controls_tab(
            'style_hover_tab',
            [
-               'label'    => esc_html__( 'hover', 'pedro-for-elementor-addons' ),
+               'label'    => __( 'hover', 'pedro-for-elementor-addons' ),
            ]
        );
 
@@ -177,7 +176,7 @@ class PedroEA_Button extends Widget_Base {
         $this->add_control(
            'text-hover-color',
            [
-               'label'     => esc_html__( 'Text Color', 'pedro-for-elementor-addons' ),
+               'label'     => __( 'Text Color', 'pedro-for-elementor-addons' ),
                'type'      => Controls_Manager::COLOR,
                'selectors' => [
                    '{{WRAPPER}} .pea-button' => 'color: {{VALUE}}',
@@ -199,7 +198,7 @@ class PedroEA_Button extends Widget_Base {
         $this->add_control(
            'button_hover_color',
            [
-               'label'     => esc_html__( 'Button Color', 'pedro-for-elementor-addons' ),
+               'label'     => __( 'Button Color', 'pedro-for-elementor-addons' ),
                'type'      => Controls_Manager::COLOR,
                'selectors' => [
                    '{{WRAPPER}} .pea-button:hover' => 'border-color: {{VALUE}}',
@@ -211,7 +210,7 @@ class PedroEA_Button extends Widget_Base {
        $this->add_control(
            'button_hover_transition_duration',
            [
-               'label'      => esc_html__( 'Transition Duration', 'pedro-for-elementor-addons' ),
+               'label'      => __( 'Transition Duration', 'pedro-for-elementor-addons' ),
                'type'       => Controls_Manager::SLIDER,
                'size_units' => [ 's', 'ms', 'custom' ],
                'default'    => [
@@ -250,7 +249,7 @@ class PedroEA_Button extends Widget_Base {
        $this->add_responsive_control(
            'button_padding',
            [
-               'label'      => esc_html__( 'Padding', 'pedro-for-elementor-addons' ),
+               'label'      => __( 'Padding', 'pedro-for-elementor-addons' ),
                'type'       => Controls_Manager::DIMENSIONS,
                'size_units' => [ 'px', '%', 'em', 'rem', 'vw', 'custom' ],
                'separator'  => 'before',
@@ -266,6 +265,7 @@ class PedroEA_Button extends Widget_Base {
 
 
    protected function render(): void {
+    
        $settings = $this->get_settings_for_display();
      
        // add attribute to a tag
@@ -281,14 +281,11 @@ class PedroEA_Button extends Widget_Base {
           $this->add_render_attribute( 'button_blend', 'style', 'mix-blend-mode: difference;' );
        }
        ?>
-
         <a <?php echo wp_kses_post( $this->get_render_attribute_string( 'button' ) ); ?>>
             <span <?php echo wp_kses_post( $this->get_render_attribute_string( 'button_blend' ) ); ?>>
                 <?php echo esc_html( $settings['button_text'] ); ?>
             </span>
         </a>
-
-
        <?php
    }
 }
