@@ -32,8 +32,9 @@
   }
 
   // accordtion js code
-  function pea_accordion($scope, $) {
+  function pedroea_accordion($scope, $) {
     const accordionTriggers = $scope[0].querySelectorAll('.pea-accordion-trigger');
+      
 
     accordionTriggers.forEach(trigger => {
       trigger.addEventListener('click', function () {
@@ -62,7 +63,7 @@
     // accordion 
     elementorFrontend.hooks.addAction(
       "frontend/element_ready/pedroea_accordion.default",
-       pea_accordion
+       pedroea_accordion
     );
   });
 
