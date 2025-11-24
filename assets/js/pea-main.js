@@ -1,7 +1,7 @@
 (function ($) {
   "use strict";
 
-  function PedroEA_Testimonial_slider($scope, $) {
+  function pea_testimonial_slider($scope, $) {
     // selector
     const slider =  $(".pea-testimonial-slider", $scope)[0];
     const next   =  $(".pea-button-next", $scope)[0];
@@ -31,11 +31,41 @@
     }
   }
 
+  // accordtion js code
+  function pea_accordion($scope, $) {
+    const accordionTriggers = $scope[0].querySelectorAll('.pea-accordion-trigger');
+
+    accordionTriggers.forEach(trigger => {
+      trigger.addEventListener('click', function () {
+        const accordionItem = this.parentElement;
+        const isActive = accordionItem.classList.contains('active');
+
+        $scope[0].querySelectorAll('.pea-accordion-item').forEach(item => {
+          item.classList.remove('active');
+        });
+
+        if (!isActive) {
+          accordionItem.classList.add('active');
+        }
+      });
+    });
+  }
+
   $(window).on("elementor/frontend/init", function () {
+
+    // testimonial
     elementorFrontend.hooks.addAction(
-      "frontend/element_ready/PedroEA_Testimonial.default",
-       PedroEA_Testimonial_slider
+      "frontend/element_ready/pedroea_testimonial.default",
+       pea_testimonial_slider
+    );
+ 
+    // accordion 
+    elementorFrontend.hooks.addAction(
+      "frontend/element_ready/pedroea_accordion.default",
+       pea_accordion
     );
   });
 
 })(jQuery);
+
+
