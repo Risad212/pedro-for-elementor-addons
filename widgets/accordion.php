@@ -99,17 +99,17 @@ class PedroEA_Accordion extends Widget_Base {
         $this->add_control(
 		  'accordtion_icon',
 			[
-				'label' => __( 'Icon', 'pedro-for-elementor-addons' ),
-				'type'      => Controls_Manager::ICONS,
-				'separator' => 'before',
+				'label'            => __( 'Icon', 'pedro-for-elementor-addons' ),
+				'type'             => Controls_Manager::ICONS,
+				'separator'        => 'before',
 				'fa4compatibility' => 'icon',
-				'default' => [
-					'value' => 'fas fa-plus',
-					'library' => 'fa-solid',
+				'default'          => [
+					'value'        => 'fas fa-plus',
+					'library'      => 'fa-solid',
 				],
 				
-				'skin' => 'inline',
-				'label_block' => false,
+				'skin'             => 'inline',
+				'label_block'      => false,
 			]
 		);
 
@@ -117,18 +117,18 @@ class PedroEA_Accordion extends Widget_Base {
         $this->add_control(
 			'title_html_tag',
 			[
-				'label' => __( 'Title HTML Tag', 'pedro-for-elementor-addons' ),
-				'type' => Controls_Manager::SELECT,
-				'options' => [
-					'h1' => 'H1',
-					'h2' => 'H2',
-					'h3' => 'H3',
-					'h4' => 'H4',
-					'h5' => 'H5',
-					'h6' => 'H6',
-					'div' => 'div',
+				'label'     => __( 'Title HTML Tag', 'pedro-for-elementor-addons' ),
+				'type'      => Controls_Manager::SELECT,
+				'options'   => [
+					'h1'    => 'H1',
+					'h2'    => 'H2',
+					'h3'    => 'H3',
+					'h4'    => 'H4',
+					'h5'    => 'H5',
+					'h6'    => 'H6',
+					'div'   => 'div',
 				],
-				'default' => 'div',
+				'default'   => 'div',
 				'separator' => 'before',
 			]
 		);
@@ -169,7 +169,7 @@ class PedroEA_Accordion extends Widget_Base {
                         'max' => 50,
                     ],
                 ],
-                'selectors'    => [
+                'selectors'   => [
                     '{{WRAPPER}} .pea-accordion-item' => 'margin-bottom: {{SIZE}}{{UNIT}};',
                 ],
             ]
@@ -233,19 +233,8 @@ class PedroEA_Accordion extends Widget_Base {
             ]
         );
 
-        // border color
-        $this->add_control(
-			'accordtion_border_color',
-			[
-				'label'     => __( 'Border Color', 'pedro-for-elementor-addons' ),
-				'type'      => Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .pea-accordion-item' => 'border-color: {{VALUE}}',
-				],
-			]
-		);
 
-        $this->end_controls_tab();// normal
+        $this->end_controls_tab(); // normal
 
         $this->start_controls_tab(
             'accordtion_bg_hover_tab',
@@ -272,18 +261,6 @@ class PedroEA_Accordion extends Widget_Base {
             ]
         );
 
-        // border color
-        $this->add_control(
-			'accordtion_border_color_hover',
-			[
-				'label'     => __( 'Border Color', 'pedro-for-elementor-addons' ),
-				'type'      => Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .pea-accordion-item:hover' => 'border-color: {{VALUE}}',
-				],
-			]
-		);
-
         $this->end_controls_tab();// hover
 
          $this->start_controls_tab(
@@ -307,21 +284,9 @@ class PedroEA_Accordion extends Widget_Base {
             Group_Control_Border::get_type(),
             [
                 'name'     => 'accordtion_border_active',
-               'selector' => '{{WRAPPER}} .pea-accordion-item.active',
+               'selector'  => '{{WRAPPER}} .pea-accordion-item.active',
             ]
         );
-
-        // border color
-        $this->add_control(
-			'accordtion_border_color_active',
-			[
-				'label'     => __( 'Border Color', 'pedro-for-elementor-addons' ),
-				'type'      => Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .pea-accordion-item.active' => 'border-color: {{VALUE}}',
-				],
-			]
-		);
 
         $this->end_controls_tab();// Active
 
@@ -378,7 +343,7 @@ class PedroEA_Accordion extends Widget_Base {
         // Normal
         $this->start_controls_tab(
             'tab_title_normal',
-            [ 'label' => __( 'Normal', 'pedro-for-elementor-addons' ) ]
+            [ 'label'       => __( 'Normal', 'pedro-for-elementor-addons' ) ]
         );
 
         $this->add_control(
@@ -406,7 +371,7 @@ class PedroEA_Accordion extends Widget_Base {
         // hover
         $this->start_controls_tab(
             'tab_title_hover',
-            [ 'label' => __( 'hover', 'pedro-for-elementor-addons' ) ]
+            [ 'label'       => __( 'hover', 'pedro-for-elementor-addons' ) ]
         );
 
         $this->add_control(
@@ -435,7 +400,7 @@ class PedroEA_Accordion extends Widget_Base {
         // active
         $this->start_controls_tab(
             'tab_title_active',
-            [ 'label' => __( 'Active', 'pedro-for-elementor-addons' ) ]
+            [ 'label'       => __( 'Active', 'pedro-for-elementor-addons' ) ]
         );
 
         $this->add_control(
@@ -482,8 +447,9 @@ class PedroEA_Accordion extends Widget_Base {
 					],
 				],
 				'selectors'   => [
-					'{{WRAPPER}} .pea-accordion-arrow-icon svg' => 'width: {{SIZE}}{{UNIT}};',
-				],
+					'{{WRAPPER}} .pea-accordion-arrow-icon svg' => 'width: {{SIZE}}{{UNIT}}; 
+                                                                    height: {{SIZE}}{{UNIT}};',
+				]
 			]
 		);
 
@@ -549,7 +515,7 @@ class PedroEA_Accordion extends Widget_Base {
          $this->start_controls_tab(
             'icon_hover_color_tab',
             [
-                'label' => __( 'Hover', 'pedro-for-elementor-addons' ),
+                'label'    => __( 'Hover', 'pedro-for-elementor-addons' ),
             ]
         );
 
@@ -623,6 +589,7 @@ class PedroEA_Accordion extends Widget_Base {
             ]
         );
 
+    
         // Background
         $this->add_group_control(
            Group_Control_Background::get_type(),
@@ -631,6 +598,15 @@ class PedroEA_Accordion extends Widget_Base {
                 'label'    => __( 'Background', 'pedro-for-elementor-addons' ),
                 'types'    => [ 'classic', 'gradient', 'video' ],
                 'selector' => '{{WRAPPER}} .pea-accordion-content',
+            ]
+        );
+
+            // typography
+           $this->add_group_control(
+            Group_Control_Typography::get_type(),
+            [
+                'name'     => 'content_typography',
+                'selector' => '{{WRAPPER}} .pea-accordion-paragraph',
             ]
         );
 

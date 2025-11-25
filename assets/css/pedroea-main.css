@@ -490,7 +490,8 @@
 }
 
 .pea-accordion-arrow-icon svg {
-    width: 100%;
+    width: 18px;
+    height: 18px;
 }
 
 .pea-arrow-line {
