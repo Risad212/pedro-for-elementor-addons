@@ -35,12 +35,6 @@
     gap: 12px;
 }
 
-.pea-avatar {
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-}
-
 .pea-meta-info {
     font-size: 14px;
     color: #111;

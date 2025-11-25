@@ -276,6 +276,45 @@ class PedroEA_Testimonial extends Widget_Base {
             ]
         );
 
+          $this->add_control(
+            'image_height',
+            [
+                'label'      => esc_html__( 'Width', 'pedro-for-elementor-addons' ),
+                'type'       => Controls_Manager::SLIDER,
+                'size_units' => [ 'px', '%', 'em', 'rem', 'vw', 'custom' ],
+                'range'      => [
+                    'px'     => [ 'min' => 20, 'max' => 200 ],
+                ],
+                'default'    => [
+                    'unit'   => 'px',
+                    'size'   => 50,
+                ],
+                'selectors'  => [
+                    '{{WRAPPER}} .pea-avatar' => 'height: {{SIZE}}{{UNIT}};',
+                ],
+            ]
+        );
+
+
+        $this->add_control(
+            'image_radius',
+            [
+                'label'      => esc_html__( 'Border Radius', 'pedro-for-elementor-addons' ),
+                'type'       => Controls_Manager::SLIDER,
+                'size_units' => [ 'px', '%'],
+                'range'      => [
+                    'px'     => [ 'min' => 20, 'max' => 200 ],
+                ],
+                'default'    => [
+                    'unit'   => 'px',
+                    'size'   => 50,
+                ],
+                'selectors'  => [
+                    '{{WRAPPER}} .pea-avatar' => 'border-radius: {{SIZE}}{{UNIT}};',
+                ],
+            ]
+        );
+
         $this->end_controls_section();
 
         // Style Name
@@ -358,6 +397,45 @@ class PedroEA_Testimonial extends Widget_Base {
             ]
         );
 
+        $this->add_control(
+            'pagination_size',
+            [
+                'label'      => esc_html__( 'Size', 'pedro-for-elementor-addons' ),
+                'type'       => Controls_Manager::SLIDER,
+                'size_units' => [ 'px'],
+                'range'      => [
+                    'px'     => [ 'min' => 16, 'max' => 200 ],
+                ],
+                'default'    => [
+                    'unit'   => 'px',
+                    'size'   => 16,
+                ],
+                'selectors'  => [
+                 '{{WRAPPER}} .pea-swiper-pagination .swiper-pagination-bullet' => 'width: {{SIZE}}{{UNIT}}; height: {{SIZE}}{{UNIT}};',
+                ],
+            ]
+        );
+
+        
+        $this->add_control(
+            'pagination_margin_top',
+            [
+                'label'      => esc_html__( 'Margin Top', 'pedro-for-elementor-addons' ),
+                'type'       => Controls_Manager::SLIDER,
+                'size_units' => [ 'px'],
+                'range'      => [
+                    'px'     => [ 'min' => 0]
+                ],
+                'default'    => [
+                    'unit'   => 'px',
+                    'size'   => 16,
+                ],
+                'selectors'  => [
+                 '{{WRAPPER}} .pea-swiper-pagination' => 'margin-top: {{SIZE}}{{UNIT}};',
+                ],
+            ]
+        );
+
         $this->end_controls_section();
 
         // Style Navigation
@@ -386,10 +464,49 @@ class PedroEA_Testimonial extends Widget_Base {
                 'label'     => esc_html__( 'Icon Color', 'pedro-for-elementor-addons' ),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .pea-nav-icon i' => 'color: {{VALUE}}',
+                    '{{WRAPPER}} .pea-nav-icon svg' => 'fill: {{VALUE}}',
                 ],
             ]
         );
+
+         $this->add_control(
+            'nav_btn_size',
+            [
+                'label'      => esc_html__( 'Button Size', 'pedro-for-elementor-addons' ),
+                'type'       => Controls_Manager::SLIDER,
+                'size_units' => [ 'px'],
+                'range'      => [
+                    'px'     => [ 'min' => 16],
+                ],
+                'default'    => [
+                    'unit'   => 'px',
+                    'size'   => 40,
+                ],
+                'selectors'  => [
+                 '{{WRAPPER}} .navigation-button' => 'width: {{SIZE}}{{UNIT}}; height: {{SIZE}}{{UNIT}};',
+                ],
+            ]
+        );
+
+         $this->add_control(
+            'nav_icon_size',
+            [
+                'label'      => esc_html__( 'Icon Size', 'pedro-for-elementor-addons' ),
+                'type'       => Controls_Manager::SLIDER,
+                'size_units' => [ 'px'],
+                'range'      => [
+                    'px'     => [ 'min' => 16],
+                ],
+                'default'    => [
+                    'unit'   => 'px',
+                    'size'   => 16,
+                ],
+                'selectors'  => [
+                 '{{WRAPPER}} .pea-nav-icon svg' => 'width: {{SIZE}}{{UNIT}}; height: {{SIZE}}{{UNIT}};',
+                ],
+            ]
+        );
+        
 
         $this->end_controls_section();
     }
