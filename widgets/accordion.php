@@ -455,9 +455,9 @@ class PedroEA_Accordion extends Widget_Base {
 
         // icon spacing
         $this->add_responsive_control(
-			'icon_space',
+			'icon_padding',
 			[
-				'label'       => __( 'Icon Spacing', 'pedro-for-elementor-addons' ),
+				'label'       => __( 'Icon Padding', 'pedro-for-elementor-addons' ),
 				'type'        => Controls_Manager::SLIDER,
 				'size_units'  => [ 'px', 'em', 'rem', 'custom' ],
 				'range'       => [
@@ -472,7 +472,7 @@ class PedroEA_Accordion extends Widget_Base {
 					],
 				],
 				'selectors'   => [
-					'{{WRAPPER}} .pea-accordion-arrow-icon' => 'margin-inline-end: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .pea-accordion-arrow' => 'padding: {{SIZE}}{{UNIT}};',
 				],
 			]
 		);
@@ -662,6 +662,9 @@ class PedroEA_Accordion extends Widget_Base {
         if ( empty( $accordion_items ) ) {
             return;
         }
+
+        $title_tag = Utils::validate_html_tag( $settings['title_html_tag'] );
+
         ?>
 
         <div class="pea-accordion-container">
@@ -672,7 +675,7 @@ class PedroEA_Accordion extends Widget_Base {
                     <div class="pea-accordion-trigger">
 
                         <div class="pea-accordion-title">
-                            <?php echo esc_html( $item['title'] ); ?>
+                            <?php echo "<{$title_tag}>" . esc_html( $item['title'] ) . "</{$title_tag}>"; ?>
                         </div>
 
                         <div class="pea-accordion-arrow">
