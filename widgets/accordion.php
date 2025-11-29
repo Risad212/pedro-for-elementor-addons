@@ -675,7 +675,7 @@ class PedroEA_Accordion extends Widget_Base {
                     <div class="pea-accordion-trigger">
 
                         <div class="pea-accordion-title">
-                            <?php echo "<{$title_tag}>" . esc_html( $item['title'] ) . "</{$title_tag}>"; ?>
+                            <?php echo esc_html( "<{$title_tag}>") . esc_html( $item['title'] ) . esc_html("</{$title_tag}>"); ?>
                         </div>
 
                         <div class="pea-accordion-arrow">
