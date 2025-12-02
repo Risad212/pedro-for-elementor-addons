@@ -382,7 +382,7 @@
     fill: #fff;
 }
 
-.pea-team-card .pea-card-content .pea-title {
+.pea-team-card .pea-card-content .pea-team-title {
     color: #111111;
     font-weight: 600;
     margin-top: 0;
@@ -391,17 +391,17 @@
     font-size: 20px;
 }
 
-.pea-team-card .pea-card-content .pea-title a {
+.pea-team-card .pea-card-content .pea-team-title a {
     text-decoration: none;
     color: #000;
     transition: .4s;
 }
 
-.pea-team-card .pea-card-content .pea-title a:hover {
+.pea-team-card .pea-card-content .pea-team-title a:hover {
     color: #2b2b2b
 }
 
-.pea-team-card .pea-card-content .pea-position {
+.pea-team-card .pea-card-content .pea-team-position {
     font-weight: 500;
     padding: 0;
     text-transform: capitalize;
