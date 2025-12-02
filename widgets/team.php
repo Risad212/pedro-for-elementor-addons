@@ -333,7 +333,7 @@ class PedroEA_Team extends Widget_Base {
 			Group_Control_Box_Shadow::get_type(),
 			[
 				'name'     => 'box_shadow',
-				'selector' => '{{WRAPPER}} .pea-team-img',
+				'selector' => '{{WRAPPER}} .pea-team-card',
 			]
 		);
 
@@ -343,7 +343,7 @@ class PedroEA_Team extends Widget_Base {
 				'label'     => __( 'Background Color', 'pedro-for-elementor-addons' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
-					'{{WRAPPER}} .pea-team-img' => 'background: {{VALUE}}',
+					'{{WRAPPER}} .pea-team-card' => 'background: {{VALUE}}',
 				],
 			]
 		);
@@ -585,6 +585,18 @@ class PedroEA_Team extends Widget_Base {
 		]
 	   );
 
+	   $this->add_responsive_control(
+			'icon_size_wrap',
+			[
+				'label'      => __( 'Icon Wrapper Size', 'pedro-for-elementor-addons' ),
+				'type'       => Controls_Manager::SLIDER,
+				'size_units' => ['px'],
+				'selectors'  => [
+					'{{WRAPPER}} .pea-social-media li > a' => 'width: {{SIZE}}{{UNIT}}; height: {{SIZE}}{{UNIT}};',
+				],
+			]
+		);
+
 	  $this->add_responsive_control(
 			'icon_size',
 			[
@@ -715,6 +727,17 @@ class PedroEA_Team extends Widget_Base {
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => [
 					'{{WRAPPER}} .pea-social-media li a:hover' => 'background: {{VALUE}}',
+				],
+			]
+		);
+
+		$this->add_control(
+			'icon_hover_border',
+			[
+				'label'     => __( 'Border Color', 'pedro-for-elementor-addons' ),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => [
+					'{{WRAPPER}} .pea-social-media li a:hover' => 'border-color: {{VALUE}}',
 				],
 			]
 		);
