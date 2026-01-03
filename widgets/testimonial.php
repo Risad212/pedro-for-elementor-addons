@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-class PedroEA_Testimonial extends Widget_Base {
+class Testimonial extends Widget_Base {
 
     public function get_name() {
         return 'pedroea_testimonial';
