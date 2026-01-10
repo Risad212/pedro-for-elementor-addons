@@ -267,6 +267,19 @@ class Button extends Widget_Base
             ]
         );
 
+        $this->add_responsive_control(
+            'button_radius',
+            [
+                'label'      => __('Border Radius', 'pedro-for-elementor-addons'),
+                'type'       => Controls_Manager::DIMENSIONS,
+                'size_units' => ['px', '%', 'em'],
+                'selectors'  => [
+                    '{{WRAPPER}} .pea-button' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+                ],
+            ]
+        );
+
+
 
         $this->end_controls_section();
     }
