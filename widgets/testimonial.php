@@ -115,36 +115,6 @@ class Testimonial extends Widget_Base
             ]
         );
 
-
-        $this->add_control(
-            'arrow_prev_icon',
-            [
-                'label'       => __('Previous Icon', 'pedro-for-elementor-addons'),
-                'label_block' => false,
-                'type'        => Controls_Manager::ICONS,
-                'skin'        => 'inline',
-                'default'     => [
-                    'value'   => 'fas fa-chevron-left',
-                    'library' => 'fa-solid',
-                ],
-            ]
-        );
-
-        $this->add_control(
-            'arrow_next_icon',
-            [
-                'label'       => __('Next Icon', 'pedro-for-elementor-addons'),
-                'label_block' => false,
-                'type'        => Controls_Manager::ICONS,
-                'skin'        => 'inline',
-                'separator'   => 'after',
-                'default'     => [
-                    'value'   => 'fas fa-chevron-right',
-                    'library' => 'fa-solid',
-                ],
-            ]
-        );
-
         $this->add_control(
             'image_switch',
             [
@@ -184,7 +154,7 @@ class Testimonial extends Widget_Base
         $this->add_control(
             'discription_switch',
             [
-                'label'        => esc_html__('Designation', 'pedro-for-elementor-addons'),
+                'label'        => esc_html__('Discription', 'pedro-for-elementor-addons'),
                 'type'         => Controls_Manager::SWITCHER,
                 'label_on'     => esc_html__('Show', 'pedro-for-elementor-addons'),
                 'label_off'    => esc_html__('Hide', 'pedro-for-elementor-addons'),
@@ -197,18 +167,6 @@ class Testimonial extends Widget_Base
             'pagination_switch',
             [
                 'label'        => esc_html__('Pagination', 'pedro-for-elementor-addons'),
-                'type'         => Controls_Manager::SWITCHER,
-                'label_on'     => esc_html__('Show', 'pedro-for-elementor-addons'),
-                'label_off'    => esc_html__('Hide', 'pedro-for-elementor-addons'),
-                'return_value' => 'yes',
-                'default'      => 'yes',
-            ]
-        );
-
-        $this->add_control(
-            'navigation_switch',
-            [
-                'label'        => esc_html__('Navigation', 'pedro-for-elementor-addons'),
                 'type'         => Controls_Manager::SWITCHER,
                 'label_on'     => esc_html__('Show', 'pedro-for-elementor-addons'),
                 'label_off'    => esc_html__('Hide', 'pedro-for-elementor-addons'),
@@ -469,11 +427,11 @@ class Testimonial extends Widget_Base
                 'type'       => Controls_Manager::SLIDER,
                 'size_units' => ['px'],
                 'range'      => [
-                    'px'     => ['min' => 16, 'max' => 200],
+                    'px'     => ['min' => 5, 'max' => 200],
                 ],
                 'default'    => [
                     'unit'   => 'px',
-                    'size'   => 16,
+                    'size'   => 12,
                 ],
                 'selectors'  => [
                     '{{WRAPPER}} .pea-swiper-pagination .swiper-pagination-bullet' => 'width: {{SIZE}}{{UNIT}}; height: {{SIZE}}{{UNIT}};',
@@ -502,85 +460,13 @@ class Testimonial extends Widget_Base
         );
 
         $this->end_controls_section();
-
-        // Style Navigation
-        $this->start_controls_section(
-            'navigation_section',
-            [
-                'label' => esc_html__('Navigation', 'pedro-for-elementor-addons'),
-                'tab'   => Controls_Manager::TAB_STYLE,
-            ]
-        );
-
-        $this->add_control(
-            'nav_bg',
-            [
-                'label'     => esc_html__('Background Color', 'pedro-for-elementor-addons'),
-                'type'      => Controls_Manager::COLOR,
-                'selectors' => [
-                    '{{WRAPPER}} .pea-button-prev, {{WRAPPER}} .pea-button-next' => 'background-color: {{VALUE}}',
-                ],
-            ]
-        );
-
-        $this->add_control(
-            'nav_icon_color',
-            [
-                'label'     => esc_html__('Icon Color', 'pedro-for-elementor-addons'),
-                'type'      => Controls_Manager::COLOR,
-                'selectors' => [
-                    '{{WRAPPER}} .pea-nav-icon svg' => 'fill: {{VALUE}}',
-                ],
-            ]
-        );
-
-        $this->add_control(
-            'nav_btn_size',
-            [
-                'label'      => esc_html__('Button Size', 'pedro-for-elementor-addons'),
-                'type'       => Controls_Manager::SLIDER,
-                'size_units' => ['px'],
-                'range'      => [
-                    'px'     => ['min' => 16],
-                ],
-                'default'    => [
-                    'unit'   => 'px',
-                    'size'   => 40,
-                ],
-                'selectors'  => [
-                    '{{WRAPPER}} .navigation-button' => 'width: {{SIZE}}{{UNIT}}; height: {{SIZE}}{{UNIT}};',
-                ],
-            ]
-        );
-
-        $this->add_control(
-            'nav_icon_size',
-            [
-                'label'      => esc_html__('Icon Size', 'pedro-for-elementor-addons'),
-                'type'       => Controls_Manager::SLIDER,
-                'size_units' => ['px'],
-                'range'      => [
-                    'px'     => ['min' => 16],
-                ],
-                'default'    => [
-                    'unit'   => 'px',
-                    'size'   => 16,
-                ],
-                'selectors'  => [
-                    '{{WRAPPER}} .pea-nav-icon svg' => 'width: {{SIZE}}{{UNIT}}; height: {{SIZE}}{{UNIT}};',
-                ],
-            ]
-        );
-
-
-        $this->end_controls_section();
     }
 
     protected function render(): void
     {
         $settings         = $this->get_settings_for_display();
         $testimonial_list = $settings['testimonial_list'];
-?>
+    ?>
         <div class="pea-testimonial-wrapper">
             <div class="swiper pea-testimonial-slider">
                 <div class="swiper-wrapper">
@@ -624,21 +510,6 @@ class Testimonial extends Widget_Base
             <!-- Pagination -->
             <?php if (! empty($settings['pagination_switch'])) : ?>
                 <div class="pea-swiper-pagination"></div>
-            <?php endif; ?>
-
-            <!-- Navigation -->
-            <?php if (! empty($settings['navigation_switch'])) : ?>
-                <div class="navigation-button pea-button-prev" aria-label="Previous slide">
-                    <span class="pea-icon-prev pea-nav-icon">
-                        <?php Icons_Manager::render_icon($settings['arrow_prev_icon'], ['aria-hidden' => 'true']); ?>
-                    </span>
-                </div>
-
-                <div class="navigation-button pea-button-next" aria-label="Next slide">
-                    <span class="pea-icon-next pea-nav-icon">
-                        <?php Icons_Manager::render_icon($settings['arrow_next_icon'], ['aria-hidden' => 'true']); ?>
-                    </span>
-                </div>
             <?php endif; ?>
         </div>
 <?php
