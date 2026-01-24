@@ -1,35 +1,43 @@
 (function ($) {
   "use strict";
 
-  function pea_testimonial_slider($scope, $) {
-    // selector
-    const slider =  $(".pea-testimonial-slider", $scope)[0];
-    const next   =  $(".pea-button-next", $scope)[0];
-    const prev   =  $(".pea-button-prev", $scope)[0];
+function pea_testimonial_slider($scope, $) {
+  const slider = $(".pea-testimonial-slider", $scope)[0];
+  const testimonialId = $scope[0].id;
+  const paginationEl = $scope.find(".pea-swiper-pagination")[0];
 
-    // Initialize Swiper
-    if (slider) {
-      new Swiper(slider, {
-        slidesPerView: 3,
-        loop: true,
-        spaceBetween: 20,
-        grabCursor: true,
-        navigation: {
-          nextEl: next,
-          prevEl: prev,
-        },
-        pagination: {
-          el: $scope.find(".pea-swiper-pagination")[0],
-          clickable: true,
-        },
-        breakpoints: {
-          640:  { slidesPerView: 1 },
-          768:  { slidesPerView: 2 },
-          1024: { slidesPerView: 3 },
-        },
-      });
-    }
+  let next = null;
+  let prev = null;
+
+  if( testimonialId ){
+      const  navContainer = $(`.pea-testimonial-nav#${testimonialId}`)[0];
+      next = navContainer.querySelector(".pea-button-next");
+      prev = navContainer.querySelector(".pea-button-prev");
   }
+  
+  new Swiper(slider, {
+    slidesPerView: 3,
+    loop: true,
+    spaceBetween: 20,
+    grabCursor: true,
+    navigation: {
+      nextEl: next,
+      prevEl: prev,
+    },
+    pagination: {
+      el: paginationEl,
+      clickable: true,
+    },
+    breakpoints: {
+      640:  { slidesPerView: 1 },
+      768:  { slidesPerView: 2 },
+      1024: { slidesPerView: 3 },
+    },
+  });
+}
+
+
+
 
   // accordtion js code
   function pedroea_accordion($scope, $) {
@@ -68,5 +76,3 @@
   });
 
 })(jQuery);
-
-
