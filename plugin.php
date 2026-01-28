@@ -8,6 +8,7 @@ use PedroEA\Widgets\Button;
 use PedroEA\Widgets\Team;
 use PedroEA\Widgets\Accordion;
 use PedroEA\Widgets\Testimonial_Navigation;
+use PedroEA\Widgets\Custom_CSS;
 
 // Exit if accessed directly.
 if (! defined('ABSPATH')) {
@@ -58,6 +59,7 @@ class PedroEA_Plugin
 		require_once PEDROEA_PATH . 'widgets/button.php';
 		require_once PEDROEA_PATH . 'widgets/accordion.php';
 		require_once PEDROEA_PATH . 'widgets/testimonial_navigation.php';
+        require_once PEDROEA_PATH . 'widgets/custom-css.php';
 
 		$widgets_manager->register(new Testimonial());
 		$widgets_manager->register(new Timeline());
@@ -65,6 +67,9 @@ class PedroEA_Plugin
 		$widgets_manager->register(new Button());
 		$widgets_manager->register(new Team());
 		$widgets_manager->register(new Testimonial_Navigation());
+
+		// custom css
+		new Custom_CSS();
 	}
 
 	/**
