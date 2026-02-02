@@ -177,6 +177,196 @@ class Testimonial extends Widget_Base
 
         $this->end_controls_section();
 
+        // settings
+         $this->start_controls_section(
+            'section_settings',
+            [
+                'label' => __('Settings', 'pedro-for-elementor-addons'),
+                'tab'   => Controls_Manager::TAB_CONTENT,
+            ]
+        );
+
+         $this->add_control(
+            'slider_desktop_item',
+            [
+                'label'        => __('Dekstop Item', 'pedro-for-elementor-addons'),
+                'type'         => Controls_Manager::SLIDER,
+                'description'  => __( 'Number of items. A maximum of 6 iyrmd str allowed', 'pedro-for-elementor-addons' ),
+                'default'      => [
+                    'size'     => 3,
+                ],
+                'range'        => [
+					'item'     => [
+						'min'  => 1,
+						'max'  => 6,
+						'step' => 1,
+				],
+                
+             ],
+            ]
+        );
+
+        $this->add_control(
+            'slider_small_desktop_items',
+            [
+                'label'        => __('Dekstop Small Item', 'pedro-for-elementor-addons'),
+                'type'         => Controls_Manager::SLIDER,
+                'description'  => __( 'Number of items. A maximum of 6 iyrmd str allowed', 'pedro-for-elementor-addons' ),
+                'default'      => [
+                    'size'     => 2,
+                ],
+                'range'        => [
+					'item'     => [
+						'min'  => 1,
+						'max'  => 6,
+						'step' => 1,
+				],
+                
+             ],
+            ]
+        );
+
+          $this->add_control(
+            'slider_tablet_item',
+            [
+                'label'        => __('Tablet Item', 'pedro-for-elementor-addons'),
+                'type'         => Controls_Manager::SLIDER,
+                'description'  => __( 'Number of items. A maximum of 6 iyrmd str allowed', 'pedro-for-elementor-addons' ),
+                'default'      => [
+                    'size'     => 2,
+                ],
+                'range'        => [
+					'item'     => [
+						'min'  => 1,
+						'max'  => 6,
+						'step' => 1,
+				],
+                
+             ],
+            ]
+        );
+
+             $this->add_control(
+            'slider_mobile_item',
+            [
+                'label'        => __('Mobile Item', 'pedro-for-elementor-addons'),
+                'type'         => Controls_Manager::SLIDER,
+                'description'  => __( 'Number of items. A maximum of 6 iyrmd str allowed', 'pedro-for-elementor-addons' ),
+                'default'      => [
+                    'size'     => 1,
+                ],
+                'range'        => [
+					'item'     => [
+						'min'  => 1,
+						'max'  => 6,
+						'step' => 1,
+				],
+                
+             ],
+            ]
+        );
+
+        $this->add_control(
+            'slider_small_mobile_items',
+            [
+                'label'        => __('Mobile Small Item', 'pedro-for-elementor-addons'),
+                'type'         => Controls_Manager::SLIDER,
+                'description'  => __( 'Number of items. A maximum of 6 iyrmd str allowed', 'pedro-for-elementor-addons' ),
+                'default'      => [
+                    'size'     => 1,
+                ],
+                'range'        => [
+					'item'     => [
+						'min'  => 1,
+						'max'  => 6,
+						'step' => 1,
+				],
+                
+             ],
+            ]
+        );
+
+        $this->add_control(
+            'slider_spacebetween',
+            [
+                'label'        => __('Item Spacebetween', 'pedro-for-elementor-addons'),
+                'type'         => Controls_Manager::SLIDER,
+                'description'  => __( 'Item Spacebetween', 'pedro-for-elementor-addons' ),
+                'default'      => [
+                    'size'     => 15,
+                ],
+                'range'        => [
+					'item'     => [
+						'min'  => 1,
+						'step' => 1,
+				],
+                
+             ],
+            ]
+        );
+
+         $this->add_control(
+            'slider_speed',
+            [
+                'label'        => __('Slider Speed', 'pedro-for-elementor-addons'),
+                'type'         => Controls_Manager::SLIDER,
+                'description'  => __( 'Slider Speed add', 'pedro-for-elementor-addons' ),
+                'default'      => [
+                    'size'     => 1000,
+                ],
+                'range'        => [
+					'px'       => [
+						'min'  => 0,
+						'step' => 100,
+                        'max'  => 10000
+				],
+                
+             ],
+            ]
+        );
+
+        $this->add_control(
+			'slider_autoplay',
+			[
+				'label'        => __( 'AutoPlay', 'pedro-for-elementor-addons' ),
+				'type'         => Controls_Manager::SWITCHER,
+				'label_on'     => __( 'on', 'pedro-for-elementor-addons' ),
+				'label_off'    => __( 'off', 'pedro-for-elementor-addons' ),
+                'description'  => __( 'on off slider autoplay', 'pedro-for-elementor-addons' ),
+				'return_value' => 'yes',
+				'default'      => 'yes',
+			]
+		);
+
+        $this->add_control(
+			'slider_loop',
+			[
+				'label'        => __( 'Loop', 'pedro-for-elementor-addons' ),
+				'type'         => Controls_Manager::SWITCHER,
+				'label_on'     => __( 'on', 'pedro-for-elementor-addons' ),
+				'label_off'    => __( 'off', 'pedro-for-elementor-addons' ),
+                'description'  => __( 'on off slide infinity', 'pedro-for-elementor-addons' ),
+				'return_value' => 'yes',
+				'default'      => 'yes',
+			]
+		);
+
+         $this->add_control(
+			'slider_panigation_click',
+			[
+				'label'        => __( 'Pagination Click', 'pedro-for-elementor-addons' ),
+				'type'         => Controls_Manager::SWITCHER,
+				'label_on'     => __( 'on', 'pedro-for-elementor-addons' ),
+				'label_off'    => __( 'off', 'pedro-for-elementor-addons' ),
+                'description'  => __( 'on off pagination clickable', 'pedro-for-elementor-addons' ),
+				'return_value' => 'yes',
+				'default'      => 'yes',
+			]
+		);
+
+        $this->end_controls_section();
+
+
         // Style testimonial
         $this->start_controls_section(
             'section_style',
@@ -231,7 +421,6 @@ class Testimonial extends Widget_Base
         );
 
         $this->end_controls_section();
-
 
         // Style content
         $this->start_controls_section(
@@ -317,7 +506,6 @@ class Testimonial extends Widget_Base
                 ],
             ]
         );
-
 
         $this->add_control(
             'image_radius',
@@ -466,9 +654,21 @@ class Testimonial extends Widget_Base
     {
         $settings         = $this->get_settings_for_display();
         $testimonial_list = $settings['testimonial_list'];
+
     ?>
         <div class="pea-testimonial-wrapper">
-            <div class="swiper pea-testimonial-slider">
+            <div class="swiper pea-testimonial-slider" 
+                data-slidestoshow="<?php echo esc_attr( $settings['slider_desktop_item'] ['size'] ); ?>"
+                data-dekstop-small-items="<?php echo esc_attr( $settings['slider_small_desktop_items'] ['size'] ); ?>"
+                data-tablet-items="<?php echo esc_attr( $settings['slider_tablet_item'] ['size'] ); ?>"
+                data-mobile-items="<?php echo esc_attr( $settings['slider_mobile_item'] ['size'] ); ?>"
+                data-mobile-small-items="<?php echo esc_attr( $settings['slider_small_mobile_items'] ['size'] ); ?>"
+                data-spacebetween-items="<?php echo esc_attr( $settings['slider_spacebetween'] ['size'] ); ?>"
+                data-speed="<?php echo esc_attr( $settings['slider_speed'] ['size'] ); ?>"
+                data-autoplay="<?php echo esc_attr( $settings['slider_autoplay']); ?>"
+                data-loop="<?php echo esc_attr( $settings['slider_loop']); ?>"
+                data-pagination-click="<?php echo esc_attr( $settings['slider_panigation_click']); ?>"
+                >
                 <div class="swiper-wrapper">
                     <?php foreach ($testimonial_list as $item) : ?>
                         <div class="swiper-slide">
