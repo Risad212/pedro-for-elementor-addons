@@ -6,6 +6,28 @@ function pea_testimonial_slider($scope, $) {
   const testimonialId = $scope[0].id;
   const paginationEl = $scope.find(".pea-swiper-pagination")[0];
 
+  // convert string to number
+  const slidestoshow              = stringToNumber( slider.getAttribute('data-slidestoshow') );
+  const slider_desktop_small_item = stringToNumber( slider.getAttribute('data-dekstop-small-items') );
+  const slider_tablet_item        = stringToNumber( slider.getAttribute('data-tablet-items') );
+  const slider_mobile_item        = stringToNumber( slider.getAttribute('data-mobile-items') );
+  const slider_mobile_small_item  = stringToNumber( slider.getAttribute('data-mobile-small-items') );
+  const slider_spacebetween_item  = stringToNumber( slider.getAttribute('data-spacebetween-items') );
+  const slider_speed              = stringToNumber( slider.getAttribute('data-speed') );
+
+  // convert string to boolean
+  const slider_autoplay         = stringToBoolean( slider.getAttribute('data-autoplay') );
+  const slider_loop             = stringToBoolean( slider.getAttribute('data-loop') );
+  const slider_pagination_click = stringToBoolean( slider.getAttribute('data-pagination-click') );
+
+  function stringToNumber( string ){
+    return parseInt( string, 10);
+  }
+
+   function stringToBoolean( string ){
+    return Boolean( string );
+  }
+
   let next = null;
   let prev = null;
 
@@ -16,9 +38,11 @@ function pea_testimonial_slider($scope, $) {
   }
   
   new Swiper(slider, {
-    slidesPerView: 3,
-    loop: true,
-    spaceBetween: 20,
+    slidesPerView: slidestoshow,
+    loop: slider_loop,
+    speed: slider_speed,
+    autoplay: slider_autoplay,
+    spaceBetween: slider_spacebetween_item,
     grabCursor: true,
     navigation: {
       nextEl: next,
@@ -26,18 +50,17 @@ function pea_testimonial_slider($scope, $) {
     },
     pagination: {
       el: paginationEl,
-      clickable: true,
+      clickable: slider_pagination_click,
     },
     breakpoints: {
-      640:  { slidesPerView: 1 },
-      768:  { slidesPerView: 2 },
-      1024: { slidesPerView: 3 },
+      480:  { slidesPerView: slider_mobile_small_item },
+      640:  { slidesPerView: slider_mobile_item },
+      768:  { slidesPerView: slider_tablet_item },
+      1024: { slidesPerView: slider_desktop_small_item },
+      1440: { slidesPerView: slidestoshow },
     },
   });
 }
-
-
-
 
   // accordtion js code
   function pedroea_accordion($scope, $) {
