@@ -104,7 +104,6 @@ class PedroEA_Plugin
 
 		wp_enqueue_script('pedroea-swiper-js', PEDROEA_URL . 'assets/js/pedroea-swiper-bundle.min.js', ['jquery'], '1.0.0', true);
 		wp_enqueue_script('pedroea-main-js',   PEDROEA_URL . 'assets/js/pedroea-main.js', ['jquery'], '1.0.0', true);
-		wp_enqueue_script('pedroea-purify-js', PEDROEA_URL . 'assets/js/purify.min.js', [], '3.2.7', true );
 	}
 
 	/**
