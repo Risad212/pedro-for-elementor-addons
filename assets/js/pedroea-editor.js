@@ -34,7 +34,7 @@
                     css += customCss.replace(/selector/g, selector);
                 }
                 
-               return DOMPurify.sanitize( css, { CSS: true } );
+               return css;
                 
         }
         
