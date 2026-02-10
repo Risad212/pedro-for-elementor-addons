@@ -93,23 +93,23 @@ class Testimonial_Navigation extends Widget_Base {
         $this->add_responsive_control(
             'button_alignment',
             [
-                'label'             => __( 'Button Alignment', 'pea' ),
+                'label'             => __( 'Button Alignment', 'pedro-for-elementor-addons' ),
                 'type'              => Controls_Manager::CHOOSE,
                 'options'           => [
                     'flex-start'    => [
-                        'title'     => __( 'Left', 'pea' ),
+                        'title'     => __( 'Left', 'pedro-for-elementor-addons' ),
                         'icon'      => 'eicon-text-align-left',
                     ],
                     'center'        => [
-                        'title'     => __( 'Center', 'pea' ),
+                        'title'     => __( 'Center', 'pedro-for-elementor-addons' ),
                         'icon'      => 'eicon-text-align-center',
                     ],
                     'flex-end'      => [
-                        'title'     => __( 'Right', 'pea' ),
+                        'title'     => __( 'Right', 'pedro-for-elementor-addons' ),
                         'icon'      => 'eicon-text-align-right',
                     ],
                     'space-between' => [
-                        'title'     => __( 'Space Between', 'pea' ),
+                        'title'     => __( 'Space Between', 'pedro-for-elementor-addons' ),
                         'icon'      => 'eicon-h-align-stretch',
                     ],
                 ],

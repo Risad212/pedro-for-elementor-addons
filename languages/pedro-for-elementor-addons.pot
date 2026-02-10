@@ -1,0 +1,653 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Pedro For Elementor Addons\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2026-02-09 09:13+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: \n"
+"Language: \n"
+"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.8.1; wp-6.9.1; php-8.2.23\n"
+"X-Domain: pedro-for-elementor-addons"
+
+#. 1: Plugin name 2: Elementor
+#: pedro-for-elementor-addons.php:113
+#, php-format
+msgid "\"%1$s\" requires \"%2$s\" to be installed and activated."
+msgstr ""
+
+#. 1: Plugin name 2: Elementor 3: Required Elementor version
+#. 1: Plugin name 2: PHP 3: Required PHP version
+#: pedro-for-elementor-addons.php:136 pedro-for-elementor-addons.php:160
+#, php-format
+msgid "\"%1$s\" requires \"%2$s\" version %3$s or greater."
+msgstr ""
+
+#: widgets/team.php:199
+msgid "#"
+msgstr ""
+
+#: widgets/team.php:103
+msgid "A Happy Pedro Member!"
+msgstr ""
+
+#: widgets/accordion.php:31 widgets/accordion.php:150
+msgid "Accordion"
+msgstr ""
+
+#: widgets/accordion.php:94
+msgid "Accordion 1"
+msgstr ""
+
+#: widgets/accordion.php:98
+msgid "Accordion 2"
+msgstr ""
+
+#: widgets/accordion.php:95
+msgid "Accordion content 1"
+msgstr ""
+
+#: widgets/accordion.php:99
+msgid "Accordion content 2"
+msgstr ""
+
+#: widgets/accordion.php:80
+msgid "Accordion content goes here..."
+msgstr ""
+
+#: widgets/accordion.php:89
+msgid "Accordion Items"
+msgstr ""
+
+#: widgets/accordion.php:277 widgets/accordion.php:411
+#: widgets/accordion.php:557
+msgid "Active"
+msgstr ""
+
+#: widgets/team.php:129
+msgid "Alignment"
+msgstr ""
+
+#: widgets/timeline.php:120
+msgid "Another example timeline item."
+msgstr ""
+
+#: widgets/testimonial.php:331
+msgid "AutoPlay"
+msgstr ""
+
+#: widgets/accordion.php:606
+msgid "Background"
+msgstr ""
+
+#: widgets/team.php:343 widgets/team.php:693 widgets/team.php:726
+#: widgets/accordion.php:513 widgets/accordion.php:544
+#: widgets/accordion.php:575 widgets/testimonial.php:382
+#: widgets/timeline.php:223
+msgid "Background Color"
+msgstr ""
+
+#: widgets/accordion.php:626
+msgid "Border"
+msgstr ""
+
+#: widgets/team.php:737
+msgid "Border Color"
+msgstr ""
+
+#: widgets/team.php:323 widgets/team.php:659 widgets/accordion.php:306
+#: widgets/accordion.php:637 widgets/testimonial.php:405
+#: widgets/testimonial.php:513 widgets/testimonial_navigation.php:192
+#: widgets/button.php:273
+msgid "Border Radius"
+msgstr ""
+
+#: widgets/team.php:291 widgets/team.php:627
+msgid "Bottom Spacing"
+msgstr ""
+
+#: widgets/testimonial.php:418
+msgid "Box Shadow"
+msgstr ""
+
+#: widgets/timeline.php:119
+msgid "Business at MIT"
+msgstr ""
+
+#: widgets/button.php:34 widgets/button.php:63
+msgid "Button"
+msgstr ""
+
+#: widgets/testimonial_navigation.php:96
+msgid "Button Alignment"
+msgstr ""
+
+#: widgets/testimonial_navigation.php:128
+msgid "Button Background"
+msgstr ""
+
+#: widgets/button.php:209
+msgid "Button Color"
+msgstr ""
+
+#: widgets/testimonial_navigation.php:154
+msgid "Button Size"
+msgstr ""
+
+#: widgets/testimonial_navigation.php:208
+msgid "Button Spacing"
+msgstr ""
+
+#: widgets/team.php:137 widgets/testimonial_navigation.php:104
+msgid "Center"
+msgstr ""
+
+#: widgets/team.php:58
+msgid "Choose Image"
+msgstr ""
+
+#: widgets/team.php:478 widgets/team.php:521 widgets/team.php:550
+#: widgets/team.php:682 widgets/team.php:715 widgets/accordion.php:360
+#: widgets/accordion.php:388 widgets/accordion.php:417
+#: widgets/testimonial.php:603 widgets/timeline.php:212
+#: widgets/timeline.php:269 widgets/timeline.php:299 widgets/timeline.php:329
+msgid "Color"
+msgstr ""
+
+#: widgets/timeline.php:90 widgets/timeline.php:114
+msgid "Computer Science at Harvard University"
+msgstr ""
+
+#: widgets/accordion.php:78 widgets/accordion.php:595 widgets/timeline.php:56
+msgid "Content"
+msgstr ""
+
+#: widgets/team.php:453
+msgid "Content Padding"
+msgstr ""
+
+#: widgets/testimonial.php:192
+msgid "Dekstop Item"
+msgstr ""
+
+#: widgets/testimonial.php:212
+msgid "Dekstop Small Item"
+msgstr ""
+
+#: widgets/timeline.php:98 widgets/timeline.php:167 widgets/timeline.php:313
+msgid "Description"
+msgstr ""
+
+#: widgets/testimonial.php:90 widgets/testimonial.php:145
+#: widgets/testimonial.php:565
+msgid "Designation"
+msgstr ""
+
+#: widgets/testimonial.php:67 widgets/testimonial.php:157
+#: widgets/testimonial.php:429
+msgid "Discription"
+msgstr ""
+
+#: widgets/accordion.php:190
+msgid "Distance from Content"
+msgstr ""
+
+#: widgets/team.php:120
+msgid "DIV"
+msgstr ""
+
+#: widgets/timeline.php:283
+msgid "Education"
+msgstr ""
+
+#: widgets/timeline.php:88 widgets/timeline.php:155
+msgid "Education Info"
+msgstr ""
+
+#: pedro-for-elementor-addons.php:115 pedro-for-elementor-addons.php:138
+msgid "Elementor"
+msgstr ""
+
+#. Description of the plugin
+msgid "Elementor Addon For The Elementor Themes."
+msgstr ""
+
+#: widgets/testimonial.php:85
+msgid "Ema Watson"
+msgstr ""
+
+#: widgets/team.php:176
+msgid "Enter social name"
+msgstr ""
+
+#: widgets/team.php:175 widgets/team.php:214
+msgid "Facebook"
+msgstr ""
+
+#: widgets/testimonial.php:92
+msgid "Founder"
+msgstr ""
+
+#: widgets/team.php:114
+msgid "H1"
+msgstr ""
+
+#: widgets/team.php:115
+msgid "H2"
+msgstr ""
+
+#: widgets/team.php:116
+msgid "H3"
+msgstr ""
+
+#: widgets/team.php:117
+msgid "H4"
+msgstr ""
+
+#: widgets/team.php:118
+msgid "H5"
+msgstr ""
+
+#: widgets/team.php:119
+msgid "H6"
+msgstr ""
+
+#. Author of the plugin
+msgid "Hafez Risad"
+msgstr ""
+
+#: widgets/team.php:274
+msgid "Height"
+msgstr ""
+
+#: widgets/team.php:232 widgets/testimonial.php:124 widgets/testimonial.php:136
+#: widgets/testimonial.php:148 widgets/testimonial.php:160
+#: widgets/testimonial.php:172 widgets/timeline.php:134
+#: widgets/timeline.php:146 widgets/timeline.php:158 widgets/timeline.php:170
+msgid "Hide"
+msgstr ""
+
+#: widgets/team.php:384 widgets/team.php:708 widgets/accordion.php:250
+#: widgets/accordion.php:526
+msgid "Hover"
+msgstr ""
+
+#: widgets/accordion.php:382 widgets/button.php:179
+msgid "hover"
+msgstr ""
+
+#: widgets/team.php:183 widgets/accordion.php:110 widgets/timeline.php:66
+#: widgets/timeline.php:131 widgets/timeline.php:182
+msgid "Icon"
+msgstr ""
+
+#: widgets/accordion.php:502 widgets/accordion.php:533
+#: widgets/accordion.php:564 widgets/testimonial_navigation.php:141
+msgid "Icon Color"
+msgstr ""
+
+#: widgets/accordion.php:468
+msgid "Icon Padding"
+msgstr ""
+
+#: widgets/team.php:603 widgets/accordion.php:442
+#: widgets/testimonial_navigation.php:173
+msgid "Icon Size"
+msgstr ""
+
+#: widgets/team.php:591
+msgid "Icon Wrapper Size"
+msgstr ""
+
+#: widgets/testimonial.php:74 widgets/testimonial.php:121
+#: widgets/testimonial.php:467
+msgid "Image"
+msgstr ""
+
+#: widgets/team.php:50
+msgid "Information"
+msgstr ""
+
+#: widgets/testimonial.php:292 widgets/testimonial.php:294
+msgid "Item Spacebetween"
+msgstr ""
+
+#: widgets/team.php:88
+msgid "Job Title"
+msgstr ""
+
+#: widgets/team.php:508
+msgid "Job Title Bottom Spacing"
+msgstr ""
+
+#: widgets/team.php:145
+msgid "Justify"
+msgstr ""
+
+#: widgets/button.php:74
+msgid "Know More"
+msgstr ""
+
+#: widgets/accordion.php:56
+msgid "Layout"
+msgstr ""
+
+#: widgets/team.php:133 widgets/testimonial_navigation.php:100
+msgid "Left"
+msgstr ""
+
+#: widgets/team.php:615
+msgid "Left Spacing"
+msgstr ""
+
+#: widgets/team.php:197 widgets/button.php:82
+msgid "Link"
+msgstr ""
+
+#: widgets/testimonial.php:344
+msgid "Loop"
+msgstr ""
+
+#: widgets/testimonial.php:69
+msgid ""
+"Lorem Ipsum is simply dummy text of the printing and typesetting industry. "
+"Lorem Ipsum has been the industry s standard dummy text ever since the 1500s"
+msgstr ""
+
+#: widgets/testimonial.php:634
+msgid "Margin Top"
+msgstr ""
+
+#: widgets/testimonial.php:252
+msgid "Mobile Item"
+msgstr ""
+
+#: widgets/testimonial.php:272
+msgid "Mobile Small Item"
+msgstr ""
+
+#: widgets/team.php:77 widgets/testimonial.php:83 widgets/testimonial.php:133
+#: widgets/testimonial.php:535
+msgid "Name"
+msgstr ""
+
+#: widgets/team.php:465
+msgid "Name Bottom Spacing"
+msgstr ""
+
+#: widgets/team.php:445
+msgid "Name, Job Title & Bio"
+msgstr ""
+
+#: widgets/testimonial_navigation.php:49
+msgid "Navigation Settings"
+msgstr ""
+
+#: widgets/testimonial_navigation.php:87
+msgid "Navigation Style"
+msgstr ""
+
+#: widgets/testimonial_navigation.php:75
+msgid "Next Icon"
+msgstr ""
+
+#: widgets/team.php:357 widgets/team.php:675 widgets/accordion.php:222
+#: widgets/accordion.php:354 widgets/accordion.php:494 widgets/button.php:145
+msgid "Normal"
+msgstr ""
+
+#: widgets/testimonial.php:194 widgets/testimonial.php:214
+#: widgets/testimonial.php:234 widgets/testimonial.php:254
+#: widgets/testimonial.php:274
+msgid "Number of items. A maximum of 6 iyrmd str allowed"
+msgstr ""
+
+#: widgets/button.php:100
+msgid "Off"
+msgstr ""
+
+#: widgets/testimonial.php:334 widgets/testimonial.php:347
+#: widgets/testimonial.php:360
+msgid "off"
+msgstr ""
+
+#: widgets/button.php:99
+msgid "On"
+msgstr ""
+
+#: widgets/testimonial.php:333 widgets/testimonial.php:346
+#: widgets/testimonial.php:359
+msgid "on"
+msgstr ""
+
+#: widgets/testimonial.php:361
+msgid "on off pagination clickable"
+msgstr ""
+
+#: widgets/testimonial.php:348
+msgid "on off slide infinity"
+msgstr ""
+
+#: widgets/testimonial.php:335
+msgid "on off slider autoplay"
+msgstr ""
+
+#: widgets/team.php:364 widgets/team.php:391
+msgid "Opacity"
+msgstr ""
+
+#: widgets/team.php:303 widgets/team.php:639 widgets/accordion.php:320
+#: widgets/accordion.php:650 widgets/testimonial.php:393 widgets/button.php:260
+msgid "Padding"
+msgstr ""
+
+#: widgets/timeline.php:100 widgets/timeline.php:115
+msgid "Page layouts look better with something in each section."
+msgstr ""
+
+#: widgets/testimonial.php:169 widgets/testimonial.php:595
+msgid "Pagination"
+msgstr ""
+
+#: widgets/testimonial.php:357
+msgid "Pagination Click"
+msgstr ""
+
+#: plugin.php:87
+msgid "Pedro"
+msgstr ""
+
+#: widgets/custom-css.php:25 widgets/custom-css.php:34
+msgid "Pedro Custom CSS"
+msgstr ""
+
+#: pedro-for-elementor-addons.php:114 pedro-for-elementor-addons.php:137
+#: pedro-for-elementor-addons.php:161
+msgid "Pedro Elementor Addon"
+msgstr ""
+
+#. Name of the plugin
+msgid "Pedro For Elementor Addons"
+msgstr ""
+
+#: widgets/team.php:91
+msgid "Pedro Office"
+msgstr ""
+
+#: widgets/team.php:80
+msgid "Pedro Team Member"
+msgstr ""
+
+#: widgets/team.php:244
+msgid "Photo"
+msgstr ""
+
+#: pedro-for-elementor-addons.php:162
+msgid "PHP"
+msgstr ""
+
+#: widgets/testimonial_navigation.php:66
+msgid "Previous Icon"
+msgstr ""
+
+#: widgets/testimonial.php:99 widgets/testimonial.php:103
+#: widgets/testimonial.php:107 widgets/testimonial.php:111
+msgid "Review text"
+msgstr ""
+
+#: widgets/team.php:141 widgets/testimonial_navigation.php:108
+msgid "Right"
+msgstr ""
+
+#: widgets/testimonial.php:184
+msgid "Settings"
+msgstr ""
+
+#: widgets/team.php:100
+msgid "Short Bio"
+msgstr ""
+
+#: widgets/team.php:231 widgets/testimonial.php:123 widgets/testimonial.php:135
+#: widgets/testimonial.php:147 widgets/testimonial.php:159
+#: widgets/testimonial.php:171 widgets/timeline.php:133
+#: widgets/timeline.php:145 widgets/timeline.php:157 widgets/timeline.php:169
+msgid "Show"
+msgstr ""
+
+#: widgets/team.php:229
+msgid "Show Icons"
+msgstr ""
+
+#: widgets/testimonial.php:614 widgets/timeline.php:190
+msgid "Size"
+msgstr ""
+
+#: widgets/testimonial.php:311
+msgid "Slider Speed"
+msgstr ""
+
+#: widgets/testimonial.php:313
+msgid "Slider Speed add"
+msgstr ""
+
+#: widgets/team.php:209 widgets/team.php:583
+msgid "Social Icons"
+msgstr ""
+
+#: widgets/team.php:173
+msgid "Social Name"
+msgstr ""
+
+#: widgets/team.php:162
+msgid "Social Profiles"
+msgstr ""
+
+#: widgets/testimonial_navigation.php:112
+msgid "Space Between"
+msgstr ""
+
+#: widgets/accordion.php:159
+msgid "Space Between Items"
+msgstr ""
+
+#: widgets/team.php:121
+msgid "SPAN"
+msgstr ""
+
+#: widgets/button.php:114
+msgid "Style"
+msgstr ""
+
+#: widgets/testimonial.php:232
+msgid "Tablet Item"
+msgstr ""
+
+#: widgets/testimonial_navigation.php:57
+msgid "Target Slider ID"
+msgstr ""
+
+#: widgets/team.php:29
+msgid "Team"
+msgstr ""
+
+#: widgets/team.php:760
+msgid "Team Member"
+msgstr ""
+
+#: widgets/testimonial.php:29 widgets/testimonial.php:54
+#: widgets/testimonial.php:62
+msgid "Testimonial"
+msgstr ""
+
+#: widgets/testimonial.php:374
+msgid "Testimonial Card Style"
+msgstr ""
+
+#: widgets/testimonial.php:98 widgets/testimonial.php:102
+#: widgets/testimonial.php:106 widgets/testimonial.php:110
+msgid "Testimonial Item"
+msgstr ""
+
+#: widgets/testimonial_navigation.php:25
+msgid "Testimonial Navigation"
+msgstr ""
+
+#: widgets/button.php:72
+msgid "Text"
+msgstr ""
+
+#: widgets/button.php:97
+msgid "Text Blend"
+msgstr ""
+
+#: widgets/testimonial.php:437 widgets/testimonial.php:543
+#: widgets/testimonial.php:573 widgets/button.php:153 widgets/button.php:187
+msgid "Text Color"
+msgstr ""
+
+#: widgets/timeline.php:31 widgets/timeline.php:108
+msgid "Timeline"
+msgstr ""
+
+#: widgets/timeline.php:80
+msgid "Timeline Title"
+msgstr ""
+
+#: widgets/timeline.php:113
+msgid "Timeline Title #1"
+msgstr ""
+
+#: widgets/timeline.php:118
+msgid "Timeline Title #2"
+msgstr ""
+
+#: widgets/accordion.php:67 widgets/accordion.php:69 widgets/accordion.php:335
+#: widgets/timeline.php:78 widgets/timeline.php:143 widgets/timeline.php:253
+msgid "Title"
+msgstr ""
+
+#: widgets/team.php:110 widgets/accordion.php:128
+msgid "Title HTML Tag"
+msgstr ""
+
+#: widgets/team.php:409 widgets/button.php:221
+msgid "Transition Duration"
+msgstr ""
+
+#: widgets/team.php:92
+msgid "Type Member Job Title"
+msgstr ""
+
+#: widgets/team.php:81
+msgid "Type Member Name"
+msgstr ""
+
+#: widgets/team.php:252 widgets/testimonial.php:475 widgets/testimonial.php:494
+msgid "Width"
+msgstr ""

@@ -119,7 +119,7 @@ class PedroEA_Plugin
 	}
 
 	/**
-	 * Elementor Css Files
+	 * Elementor CSS Files
 	 * 
 	 * @since 1.0.0
 	 * 
