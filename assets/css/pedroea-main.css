@@ -63,8 +63,8 @@
 }
 
 .pea-button-prev svg,
-.pea-button-next svg{
-  width: 16px;
+.pea-button-next svg {
+    width: 16px;
 }
 
 .pea-button-prev {
@@ -233,7 +233,7 @@
     z-index: 1;
 }
 
-.pea-button:hover{
+.pea-button:hover {
     color: #fff;
 }
 
@@ -277,31 +277,32 @@
     transition-timing-function: linear;
 }
 
-.pea-button span{
+.pea-button span {
     display: block;
     position: relative;
 }
 
-.pea-button:hover span{
-   animation: MoveScaleUpInitial 0.3s forwards, MoveScaleUpEnd 0.3s forwards 0.3s;
+.pea-button:hover span {
+    animation: MoveScaleUpInitial 0.3s forwards, MoveScaleUpEnd 0.3s forwards 0.3s;
 }
 
 @keyframes MoveScaleUpInitial {
-	to {
-		transform: translate3d(0,-105%,0) scale3d(1,2,1);
-		opacity: 0;
-	}
+    to {
+        transform: translate3d(0, -105%, 0) scale3d(1, 2, 1);
+        opacity: 0;
+    }
 }
 
 @keyframes MoveScaleUpEnd {
-	from {
-		transform: translate3d(0,100%,0) scale3d(1,2,1);
-		opacity: 0;
-	}
-	to {
-		transform: translate3d(0,0,0);
-		opacity: 1;
-	}
+    from {
+        transform: translate3d(0, 100%, 0) scale3d(1, 2, 1);
+        opacity: 0;
+    }
+
+    to {
+        transform: translate3d(0, 0, 0);
+        opacity: 1;
+    }
 }
 
 /*==========================================
@@ -530,5 +531,37 @@
 }
 
 .pea-accordion-item.active .pea-accordion-arrow svg {
-   fill: #fff;
+    fill: #fff;
+}
+
+
+/*==========================================
+   Filterable Gallery
+==========================================*/
+.pea-gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.pea-filters {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.pea-filter {
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.pea-gallery-item {
+    text-decoration: none;
+    display: block;
+}
+
+.pea-gallery-item img {
+    width: 100%;
+    height: auto;
+    display: block;
 }
