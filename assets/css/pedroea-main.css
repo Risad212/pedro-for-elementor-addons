@@ -565,3 +565,11 @@
     height: auto;
     display: block;
 }
+
+
+/*==========================================
+   Contact Form 7
+==========================================*/
+.cf7-wrap label{
+   display: block;
+}
