@@ -1,6 +1,7 @@
 (function ($) {
   "use strict";
 
+  // testimonial js code
   function pedroea_testimonial_slider($scope, $) {
     const slider = $(".pea-testimonial-slider", $scope)[0];
     const testimonialId = $scope[0].id;
@@ -101,6 +102,37 @@
     });
   }
 
+  // content switcher js code
+  function pedroea_content_switcher($scope, $) {
+    const $root   = $scope.find('.pedroea-content-switcher');
+    const $input  = $root.find('.pedroea-toggle-input');
+    const $track  = $root.find('.pedroea-toggle-track');
+    const $labels = $root.find('.pedroea-label');
+    const $panels = $root.find('.pedroea-panel');
+
+    function activate(index) {
+      $labels.removeClass('active');
+      $labels.filter('[data-index="' + index + '"]').addClass('active');
+      $panels.removeClass('active');
+      $panels.filter('[data-index="' + index + '"]').addClass('active');
+    }
+
+    $input.on('change', function () {
+      const isOn = $(this).is(':checked');
+      $track.toggleClass('active', isOn);
+      activate(isOn ? 1 : 0);
+    });
+
+    $labels.on('click', function () {
+      const idx = parseInt($(this).data('index'), 10);
+      if (idx === 1 && !$input.is(':checked')) {
+        $input.prop('checked', true).trigger('change');
+      } else if (idx === 0 && $input.is(':checked')) {
+        $input.prop('checked', false).trigger('change');
+      }
+    });
+  }
+
   $(window).on("elementor/frontend/init", function () {
 
     // testimonial
@@ -119,6 +151,12 @@
     elementorFrontend.hooks.addAction(
       "frontend/element_ready/pedroea_filterable_gallery.default",
       pedroea_filterable_gallery
+    );
+
+      // content switcher 
+    elementorFrontend.hooks.addAction(
+      "frontend/element_ready/pedroea_content_switcher.default",
+      pedroea_content_switcher
     );
 
   });
