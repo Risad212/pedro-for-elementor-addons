@@ -573,3 +573,73 @@
 .cf7-wrap label{
    display: block;
 }
+
+/*==========================================
+   Content Switcher
+==========================================*/
+.pedroea-switcher-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    margin-bottom: 30px;
+}
+
+.pedroea-label {
+    cursor: pointer;
+    color: #aaaaaa;
+    user-select: none;
+    transition: color .2s;
+}
+
+.pedroea-label.active {
+    color: #000000;
+}
+
+.pedroea-toggle-input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.pedroea-toggle-track {
+    position: relative;
+    display: inline-block;
+    width: 64px;
+    height: 34px;
+    border-radius: 34px;
+    background-color: #cccccc;
+    cursor: pointer;
+    transition: background-color .3s;
+    flex-shrink: 0;
+}
+
+.pedroea-toggle-track.active {
+    background-color: #4f35d2;
+}
+
+.pedroea-toggle-knob {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, .25);
+    transition: transform .3s cubic-bezier(.4, 0, .2, 1);
+    pointer-events: none;
+}
+
+.pedroea-toggle-track.active .pedroea-toggle-knob {
+    transform: translateX(30px);
+}
+
+.pedroea-panel {
+    display: none;
+}
+
+.pedroea-panel.active {
+    display: block;
+}
