@@ -64,7 +64,7 @@ class PedroEA_Plugin
 		require_once PEDROEA_PATH . 'widgets/team.php';
 		require_once PEDROEA_PATH . 'widgets/button.php';
 		require_once PEDROEA_PATH . 'widgets/accordion.php';
-		require_once PEDROEA_PATH . 'widgets/testimonial_navigation.php';
+		require_once PEDROEA_PATH . 'widgets/testimonial-navigation.php';
         require_once PEDROEA_PATH . 'widgets/custom-css.php';
 	    require_once PEDROEA_PATH . 'widgets/filterable-gallery.php';
 		require_once PEDROEA_PATH . 'widgets/contact-form.php';
