@@ -13,6 +13,9 @@ use PedroEA\Widgets\Filterable_Gallery;
 use PedroEA\Widgets\Contact_Form;
 use PedroEA\Widgets\Content_Switcher;
 use PedroEA\Widgets\Post;
+use PedroEA\Widgets\Nav_Menu;
+use PedroEA\Widgets\Site_Logo;
+use PedroEA\Widgets\CopyWrite;
 
 // Exit if accessed directly.
 if (! defined('ABSPATH')) {
@@ -68,6 +71,9 @@ class PedroEA_Plugin
 		require_once PEDROEA_PATH . 'widgets/contact-form.php';
 		require_once PEDROEA_PATH . 'widgets/content-switcher.php';
 		require_once PEDROEA_PATH . 'widgets/post.php';
+		require_once PEDROEA_PATH . 'widgets/nav-menu.php';
+		require_once PEDROEA_PATH . 'widgets/site-logo.php';
+		require_once PEDROEA_PATH . 'widgets/copywrite.php';
 
 		$widgets_manager->register(new Testimonial());
 		$widgets_manager->register(new Timeline());
@@ -79,6 +85,9 @@ class PedroEA_Plugin
 		$widgets_manager->register(new Contact_Form());
 		$widgets_manager->register(new Content_Switcher());
 		$widgets_manager->register(new Post());
+        $widgets_manager->register(new Nav_Menu());
+		$widgets_manager->register(new Site_Logo());
+        $widgets_manager->register(new CopyWrite());
 
 		// custom css
 		new Custom_CSS();
