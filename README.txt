@@ -4,7 +4,7 @@ Tags: pedro, elementor, addon, widgets
 Requires at least: 6.6
 Requires PHP: 7.4
 Tested up to: 6.9
-Stable tag: 1.0.4
+Stable tag: 1.0.5
 License: GPL-3.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html 
 
@@ -25,13 +25,19 @@ Enhance your page-building experience with pre-designed widgets and styling opti
 
 Pedro For Elementor Addons currently provides the following **widgets and features**:
 
-1. Accordion Widget
-2. Button Widget
-3. Team Widget
-4. Testimonial Widget
-5. Testimonial Navigation Widget
-6. Timeline Widget
-7. Custom CSS – applies global styles across all widgets
+1.  Accordion Widget
+2.  Button Widget
+3.  Team Widget
+4.  Testimonial Widget
+5.  Testimonial Navigation Widget
+6.  Timeline Widget
+7.  Custom CSS – applies global styles across all widgets
+8.  Contact From 7
+9.  Content Switcher
+10. CopyWrite
+11. Filterable Gallery
+12. Post
+13. Site Logo
 
 == Installation ==
 
@@ -55,6 +61,9 @@ No, this addon works with the free version of Elementor. It is fully compatible 
 2. Another example of plugin features.
 
 == Changelog ==
+
+= 1.0.5 =
+* add contact form 7,content Switcher, filterable gallery, post, site logo, CopyWrite widgets,
 
 = 1.0.4 =
 * fix live edit js code, tranlation ready,
