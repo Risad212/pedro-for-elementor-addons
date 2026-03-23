@@ -4,7 +4,7 @@
  * Plugin Name:       Pedro For Elementor Addons
  * Plugin URI: 
  * Description:       Elementor Addon For The Elementor Themes.
- * Version:           1.0.4
+ * Version:           1.0.5
  * Requires at least: 6.6
  * Requires PHP:      7.4
  * Author:            Hafez Risad
