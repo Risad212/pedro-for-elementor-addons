@@ -1,0 +1,15 @@
+body.pedroea-footer-active footer,
+body.pedroea-footer-active .site-footer,
+body.pedroea-footer-active #colophon,
+body.pedroea-footer-active .elementor-location-footer {
+    display: none !important;
+}
+
+#pedroea-footer.pedroea-footer-template {
+    display: block;
+    width: 100%;
+}
+
+#pedroea-footer.pedroea-footer-template .elementor-section {
+    clear: both;
+}

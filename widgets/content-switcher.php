@@ -40,17 +40,26 @@ class Content_Switcher extends Widget_Base {
 	private function get_elementor_templates(): array {
 		$list = [ '' => '— Select a Template —' ];
 
-		if ( ! class_exists( 'Elementor\Plugin' ) ) {
+		if ( ! post_type_exists( 'elementor_library' ) ) {
 			return $list;
 		}
 
-		$templates_data = Plugin::$instance->templates_manager->get_source( 'local' )->get_items();
+		$templates = get_posts( [
+			'post_type'              => 'elementor_library',
+			'post_status'            => 'publish',
+			'posts_per_page'         => -1,
+			'orderby'                => 'title',
+			'order'                  => 'ASC',
+			'no_found_rows'          => true,
+			'update_post_term_cache' => false,
+			'update_post_meta_cache' => false,
+		] );
 
-		foreach ( $templates_data as $template ) {
-			if ( 'kit' === $template['type'] ) {
+		foreach ( $templates as $template ) {
+			if ( 'kit' === get_post_meta( $template->ID, '_elementor_template_type', true ) ) {
 				continue;
 			}
-			$list[ $template['template_id'] ] = $template['title'];
+			$list[ $template->ID ] = $template->post_title;
 		}
 
 		return $list;
@@ -219,9 +228,12 @@ class Content_Switcher extends Widget_Base {
 				'label'      => __( 'Height', 'pedro-for-elementor-addons' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => [ 'px' ],
-				'range'      => [ 'px' => [ 'min' => 20, 'max' => 60 ] ],
+				'range'      => [ 'px' => [ 'min' => 34, 'max' => 60 ] ],
 				'default'    => [ 'unit' => 'px', 'size' => 34 ],
-				'selectors'  => [ '{{WRAPPER}} .pedroea-toggle-track' => 'height: {{SIZE}}{{UNIT}}; border-radius: {{SIZE}}{{UNIT}};' ],
+				'selectors'  => [
+					'{{WRAPPER}} .pedroea-toggle-track' => 'height: {{SIZE}}{{UNIT}}; border-radius: {{SIZE}}{{UNIT}}; --pea-toggle-knob-size: calc({{SIZE}}{{UNIT}} - 6px);',
+					'{{WRAPPER}} .pedroea-toggle-knob'  => 'width: calc({{SIZE}}{{UNIT}} - 6px); height: calc({{SIZE}}{{UNIT}} - 6px);',
+				],
 			] );
 
 			$this->add_control( 'toggle_color_off', [
@@ -234,7 +246,7 @@ class Content_Switcher extends Widget_Base {
 			$this->add_control( 'toggle_color_on', [
 				'label'     => __( 'Track Color (On)', 'pedro-for-elementor-addons' ),
 				'type'      => Controls_Manager::COLOR,
-				'default'   => '#000000',
+				'default'   => '#4f35d2',
 				'selectors' => [ '{{WRAPPER}} .pedroea-toggle-track.active' => 'background-color: {{VALUE}};' ],
 			] );
 
@@ -304,7 +316,7 @@ class Content_Switcher extends Widget_Base {
 			$id = (int) ( $item['item_template'] ?? 0 );
 			if ( $id ) {
 				Plugin::$instance->frontend->enqueue_scripts();
-				echo Plugin::$instance->frontend->get_builder_content_for_display( $id, true ); 
+				echo Plugin::$instance->frontend->get_builder_content_for_display( $id, true ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			}
 		} else {
 			$text = $item['item_text'] ?? '';

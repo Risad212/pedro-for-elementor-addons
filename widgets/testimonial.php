@@ -64,7 +64,7 @@ class Testimonial extends Widget_Base
                 'fields'              => [
                     [
                         'name'        => 'discription',
-                        'label'       => esc_html__('Discription', 'pedro-for-elementor-addons'),
+                        'label'       => esc_html__('Description', 'pedro-for-elementor-addons'),
                         'type'        => Controls_Manager::TEXTAREA,
                         'default'     => esc_html__('Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry s standard dummy text ever since the 1500s', 'pedro-for-elementor-addons'),
                         'label_block' => true,
@@ -95,23 +95,31 @@ class Testimonial extends Widget_Base
                 ],
                 'default'              => [
                     [
-                        'list_title'   => esc_html__('Testimonial Item', 'pedro-for-elementor-addons'),
-                        'list_content' => esc_html__('Review text', 'pedro-for-elementor-addons'),
+                        'discription' => esc_html__('Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry s standard dummy text ever since the 1500s', 'pedro-for-elementor-addons'),
+                        'image'       => ['url' => Utils::get_placeholder_image_src()],
+                        'name'        => esc_html__('Ema Watson', 'pedro-for-elementor-addons'),
+                        'designation' => esc_html__('Founder', 'pedro-for-elementor-addons'),
                     ],
                     [
-                        'list_title'   => esc_html__('Testimonial Item', 'pedro-for-elementor-addons'),
-                        'list_content' => esc_html__('Review text', 'pedro-for-elementor-addons'),
+                        'discription' => esc_html__('Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry s standard dummy text ever since the 1500s', 'pedro-for-elementor-addons'),
+                        'image'       => ['url' => Utils::get_placeholder_image_src()],
+                        'name'        => esc_html__('Ema Watson', 'pedro-for-elementor-addons'),
+                        'designation' => esc_html__('Founder', 'pedro-for-elementor-addons'),
                     ],
                     [
-                        'list_title'   => esc_html__('Testimonial Item', 'pedro-for-elementor-addons'),
-                        'list_content' => esc_html__('Review text', 'pedro-for-elementor-addons'),
+                        'discription' => esc_html__('Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry s standard dummy text ever since the 1500s', 'pedro-for-elementor-addons'),
+                        'image'       => ['url' => Utils::get_placeholder_image_src()],
+                        'name'        => esc_html__('Ema Watson', 'pedro-for-elementor-addons'),
+                        'designation' => esc_html__('Founder', 'pedro-for-elementor-addons'),
                     ],
                     [
-                        'list_title'   => esc_html__('Testimonial Item', 'pedro-for-elementor-addons'),
-                        'list_content' => esc_html__('Review text', 'pedro-for-elementor-addons'),
+                        'discription' => esc_html__('Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry s standard dummy text ever since the 1500s', 'pedro-for-elementor-addons'),
+                        'image'       => ['url' => Utils::get_placeholder_image_src()],
+                        'name'        => esc_html__('Ema Watson', 'pedro-for-elementor-addons'),
+                        'designation' => esc_html__('Founder', 'pedro-for-elementor-addons'),
                     ],
                 ],
-                'title_field'  => '{{{ list_title }}}'
+                'title_field'  => '{{{ name }}}'
             ]
         );
 
@@ -154,7 +162,7 @@ class Testimonial extends Widget_Base
         $this->add_control(
             'discription_switch',
             [
-                'label'        => esc_html__('Discription', 'pedro-for-elementor-addons'),
+                'label'        => esc_html__('Description', 'pedro-for-elementor-addons'),
                 'type'         => Controls_Manager::SWITCHER,
                 'label_on'     => esc_html__('Show', 'pedro-for-elementor-addons'),
                 'label_off'    => esc_html__('Hide', 'pedro-for-elementor-addons'),
@@ -189,14 +197,14 @@ class Testimonial extends Widget_Base
          $this->add_control(
             'slider_desktop_item',
             [
-                'label'        => __('Dekstop Item', 'pedro-for-elementor-addons'),
+                'label'        => __('Desktop Item', 'pedro-for-elementor-addons'),
                 'type'         => Controls_Manager::SLIDER,
-                'description'  => __( 'Number of items. A maximum of 6 iyrmd str allowed', 'pedro-for-elementor-addons' ),
+                'description'  => __( 'Number of items. A maximum of 6 items allowed', 'pedro-for-elementor-addons' ),
                 'default'      => [
                     'size'     => 3,
                 ],
                 'range'        => [
-					'item'     => [
+					'px'       => [
 						'min'  => 1,
 						'max'  => 6,
 						'step' => 1,
@@ -209,14 +217,14 @@ class Testimonial extends Widget_Base
         $this->add_control(
             'slider_small_desktop_items',
             [
-                'label'        => __('Dekstop Small Item', 'pedro-for-elementor-addons'),
+                'label'        => __('Desktop Small Item', 'pedro-for-elementor-addons'),
                 'type'         => Controls_Manager::SLIDER,
-                'description'  => __( 'Number of items. A maximum of 6 iyrmd str allowed', 'pedro-for-elementor-addons' ),
+                'description'  => __( 'Number of items. A maximum of 6 items allowed', 'pedro-for-elementor-addons' ),
                 'default'      => [
                     'size'     => 2,
                 ],
                 'range'        => [
-					'item'     => [
+					'px'       => [
 						'min'  => 1,
 						'max'  => 6,
 						'step' => 1,
@@ -231,12 +239,12 @@ class Testimonial extends Widget_Base
             [
                 'label'        => __('Tablet Item', 'pedro-for-elementor-addons'),
                 'type'         => Controls_Manager::SLIDER,
-                'description'  => __( 'Number of items. A maximum of 6 iyrmd str allowed', 'pedro-for-elementor-addons' ),
+                'description'  => __( 'Number of items. A maximum of 6 items allowed', 'pedro-for-elementor-addons' ),
                 'default'      => [
                     'size'     => 2,
                 ],
                 'range'        => [
-					'item'     => [
+					'px'       => [
 						'min'  => 1,
 						'max'  => 6,
 						'step' => 1,
@@ -251,12 +259,12 @@ class Testimonial extends Widget_Base
             [
                 'label'        => __('Mobile Item', 'pedro-for-elementor-addons'),
                 'type'         => Controls_Manager::SLIDER,
-                'description'  => __( 'Number of items. A maximum of 6 iyrmd str allowed', 'pedro-for-elementor-addons' ),
+                'description'  => __( 'Number of items. A maximum of 6 items allowed', 'pedro-for-elementor-addons' ),
                 'default'      => [
                     'size'     => 1,
                 ],
                 'range'        => [
-					'item'     => [
+					'px'       => [
 						'min'  => 1,
 						'max'  => 6,
 						'step' => 1,
@@ -271,12 +279,12 @@ class Testimonial extends Widget_Base
             [
                 'label'        => __('Mobile Small Item', 'pedro-for-elementor-addons'),
                 'type'         => Controls_Manager::SLIDER,
-                'description'  => __( 'Number of items. A maximum of 6 iyrmd str allowed', 'pedro-for-elementor-addons' ),
+                'description'  => __( 'Number of items. A maximum of 6 items allowed', 'pedro-for-elementor-addons' ),
                 'default'      => [
                     'size'     => 1,
                 ],
                 'range'        => [
-					'item'     => [
+					'px'       => [
 						'min'  => 1,
 						'max'  => 6,
 						'step' => 1,
@@ -296,8 +304,9 @@ class Testimonial extends Widget_Base
                     'size'     => 15,
                 ],
                 'range'        => [
-					'item'     => [
+					'px'       => [
 						'min'  => 1,
+						'max'  => 100,
 						'step' => 1,
 				],
                 
@@ -426,7 +435,7 @@ class Testimonial extends Widget_Base
         $this->start_controls_section(
             'style_content',
             [
-                'label' => esc_html__('Discription', 'pedro-for-elementor-addons'),
+                'label' => esc_html__('Description', 'pedro-for-elementor-addons'),
                 'tab'   => Controls_Manager::TAB_STYLE,
             ]
         );
@@ -491,7 +500,7 @@ class Testimonial extends Widget_Base
         $this->add_control(
             'image_height',
             [
-                'label'      => esc_html__('Width', 'pedro-for-elementor-addons'),
+                'label'      => esc_html__('Height', 'pedro-for-elementor-addons'),
                 'type'       => Controls_Manager::SLIDER,
                 'size_units' => ['px', '%', 'em', 'rem', 'vw', 'custom'],
                 'range'      => [
@@ -658,8 +667,9 @@ class Testimonial extends Widget_Base
     ?>
         <div class="pea-testimonial-wrapper">
             <div class="swiper pea-testimonial-slider" 
+                id="pea-slider-<?php echo esc_attr( $this->get_id() ); ?>"
                 data-slidestoshow="<?php echo esc_attr( $settings['slider_desktop_item'] ['size'] ); ?>"
-                data-dekstop-small-items="<?php echo esc_attr( $settings['slider_small_desktop_items'] ['size'] ); ?>"
+                data-desktop-small-items="<?php echo esc_attr( $settings['slider_small_desktop_items'] ['size'] ); ?>"
                 data-tablet-items="<?php echo esc_attr( $settings['slider_tablet_item'] ['size'] ); ?>"
                 data-mobile-items="<?php echo esc_attr( $settings['slider_mobile_item'] ['size'] ); ?>"
                 data-mobile-small-items="<?php echo esc_attr( $settings['slider_small_mobile_items'] ['size'] ); ?>"

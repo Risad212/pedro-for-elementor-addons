@@ -45,11 +45,6 @@ class Filterable_Gallery extends Widget_Base
         return ['gallery', 'filterable', 'portfolio', 'filter', 'isotope'];
     }
 
-    public function get_script_depends()
-    {
-        return ['isotope', 'imagesloaded'];
-    }
-
     // Start content controls
     protected function register_controls()
     {
@@ -763,15 +758,13 @@ class Filterable_Gallery extends Widget_Base
 
                 <div class="pea-gallery">
                     <?php foreach ($gallery_items as $item) :
-                        $target   = $item['link']['is_external'] ? ' target="_blank"' : '';
-                        $nofollow = $item['link']['nofollow'] ? ' rel="nofollow"' : '';
                         $link_url = !empty($item['link']['url']) ? $item['link']['url'] : '#';
                     ?>
                         <a class="pea-gallery-item <?php echo esc_attr($item['category']); ?>" 
                             href="<?php echo esc_url($link_url); ?>" 
                             data-cat="<?php echo esc_attr($item['category']); ?>"
-                            <?php echo $item['link']['is_external'] ? 'target="_blank"' : ''; ?>
-                            <?php echo $item['link']['nofollow'] ? 'rel="nofollow"' : ''; ?>>
+                            <?php echo ! empty( $item['link']['is_external'] ) ? 'target="_blank"' : ''; ?>
+                            <?php echo ! empty( $item['link']['nofollow'] ) ? 'rel="nofollow"' : ''; ?>>
                                 
                                 <?php if (!empty($item['image']['url'])) : ?>
                                     <img src="<?php echo esc_url($item['image']['url']); ?>" 

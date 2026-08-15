@@ -4,7 +4,7 @@
  * Plugin Name:       Pedro For Elementor Addons
  * Plugin URI: 
  * Description:       Elementor Addon For The Elementor Themes.
- * Version:           1.0.5
+ * Version:           1.0.7
  * Requires at least: 6.6
  * Requires PHP:      7.4
  * Author:            Hafez Risad
@@ -35,7 +35,7 @@ final class PedroEa_Main
 	 *
 	 * @var string
 	 */
-	const VERSION = '1.0.0';
+	const VERSION = '1.0.7';
 
 	/**
 	 * Minimum Elementor version required to run the plugin.
@@ -88,6 +88,8 @@ final class PedroEa_Main
 
 		// Include main plugin file.
 		require_once PEDROEA_PATH . 'plugin.php';
+
+		// Header Footer Builder is bootstrapped inside plugin.php
 	}
 
 	/**
@@ -95,6 +97,7 @@ final class PedroEa_Main
 	 */
 	private function define_constants()
 	{
+		define('PEDROEA_VERSION', self::VERSION);
 		define('PEDROEA_URL', plugins_url('/', __FILE__));
 		define('PEDROEA_PATH', plugin_dir_path(__FILE__));
 	}

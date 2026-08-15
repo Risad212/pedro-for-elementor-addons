@@ -1,0 +1,462 @@
+/* ===== Popup Builder — enhanced UI ===== */
+
+.pedroea-popup-wrap .p-header {
+    background: linear-gradient(135deg, #20000d 0%, #730833 60%, #916675 130%);
+    position: relative;
+    overflow: hidden;
+}
+
+.pedroea-popup-wrap .p-header::after {
+    content: "";
+    position: absolute;
+    right: -60px;
+    top: -60px;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.pedroea-popup-wrap .p-header h1 {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.pedroea-popup-wrap .p-header > div,
+.pedroea-popup-wrap .p-header > .p-badge {
+    position: relative;
+    z-index: 1;
+}
+
+.pedroea-popup-wrap .p-header-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.pedroea-popup-wrap .p-btn-gradient {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 9px 18px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 700;
+    background: #fff;
+    color: #730833;
+    text-decoration: none;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.pedroea-popup-wrap .p-btn-gradient:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.24);
+    color: #20000d;
+}
+
+/* Shortcode hint */
+.pedroea-shortcode-hint {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    background: #faf3f6;
+    border: 1px solid #ecd9e1;
+    border-radius: 10px;
+    padding: 14px 18px;
+    margin: 0 0 24px;
+}
+
+.pedroea-shortcode-hint > .dashicons-shortcode {
+    color: #730833;
+    font-size: 22px;
+    width: 22px;
+    height: 22px;
+    margin-top: 1px;
+    flex-shrink: 0;
+}
+
+.pedroea-shortcode-hint code {
+    background: #ecd9e1;
+    color: #20000d;
+    padding: 2px 8px;
+    border-radius: 5px;
+    font-size: 12px;
+}
+
+/* Form layout */
+.pedroea-popup-wrap .pedroea-form {
+    display: block;
+}
+
+.pedroea-section-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 4px 0 16px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: #6b7280;
+}
+
+.pedroea-section-title::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: #f0f0f0;
+}
+
+.pedroea-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px 18px;
+    margin-bottom: 22px;
+}
+
+.pedroea-field {
+    min-width: 0;
+}
+
+.pedroea-field--full {
+    grid-column: 1 / -1;
+}
+
+.pedroea-field label {
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    color: #374151;
+    margin-bottom: 6px;
+}
+
+.pedroea-field input[type="text"],
+.pedroea-field input[type="number"],
+.pedroea-field select {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 13px;
+    background: #fff;
+    transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.pedroea-field input:focus,
+.pedroea-field select:focus {
+    border-color: #730833;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(115, 8, 51, 0.12);
+}
+
+/* Trigger pills */
+.pedroea-trigger-pills {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.pedroea-trigger-pill {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    padding: 14px 8px;
+    background: #f9fafb;
+    border: 2px solid #e5e7eb;
+    border-radius: 10px;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.15s ease;
+}
+
+.pedroea-trigger-pill .dashicons {
+    font-size: 22px;
+    width: 22px;
+    height: 22px;
+    color: #6b7280;
+}
+
+.pedroea-trigger-pill-label {
+    font-size: 12px;
+    font-weight: 600;
+    color: #374151;
+}
+
+.pedroea-trigger-pill input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.pedroea-trigger-pill:hover {
+    border-color: #d9a8ba;
+    background: #faf3f6;
+}
+
+.pedroea-trigger-pill.is-selected {
+    border-color: #730833;
+    background: #f7eef2;
+    box-shadow: 0 4px 12px rgba(115, 8, 51, 0.18);
+}
+
+.pedroea-trigger-pill.is-selected .dashicons {
+    color: #730833;
+}
+
+.pedroea-trigger-pill.is-selected .pedroea-trigger-pill-label {
+    color: #20000d;
+}
+
+.pedroea-trigger-note {
+    font-size: 12px;
+    color: #6b7280;
+    background: #f9fafb;
+    border-left: 3px solid #d9a8ba;
+    padding: 8px 12px;
+    border-radius: 0 6px 6px 0;
+    margin-top: 12px;
+}
+
+/* Switch rows */
+.pedroea-switch-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 12px 14px;
+    background: #f9fafb;
+    border: 1px solid #f0f0f0;
+    border-radius: 10px;
+}
+
+.pedroea-switch-label {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+}
+
+.pedroea-switch-label strong {
+    font-size: 13px;
+    color: #374151;
+}
+
+.pedroea-switch-label span {
+    font-size: 12px;
+    color: #9ca3af;
+}
+
+.pedroea-switch {
+    position: relative;
+    display: inline-block;
+    width: 42px;
+    height: 24px;
+    flex-shrink: 0;
+    cursor: pointer;
+}
+
+.pedroea-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.pedroea-switch-slider {
+    position: absolute;
+    cursor: pointer;
+    inset: 0;
+    background: #d1d5db;
+    border-radius: 24px;
+    transition: background 0.2s;
+}
+
+.pedroea-switch-slider::before {
+    content: "";
+    position: absolute;
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    top: 3px;
+    background: #fff;
+    border-radius: 50%;
+    transition: transform 0.2s;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+}
+
+.pedroea-switch input:checked + .pedroea-switch-slider {
+    background: #730833;
+}
+
+.pedroea-switch input:checked + .pedroea-switch-slider::before {
+    transform: translateX(18px);
+}
+
+/* Form actions */
+.pedroea-form-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-top: 18px;
+    border-top: 1px solid #f3f4f6;
+}
+
+.pedroea-form-actions .p-btn-primary {
+    margin-left: auto;
+}
+
+/* Popup list cards */
+.pedroea-popup-wrap .p-card-body {
+    padding: 22px;
+}
+
+.pedroea-popup-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 16px;
+}
+
+.pedroea-popup-card {
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    transition: box-shadow 0.15s ease, border-color 0.15s ease;
+}
+
+.pedroea-popup-card:hover {
+    border-color: #d9a8ba;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.07);
+}
+
+.pedroea-popup-card-top {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.pedroea-popup-card-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: #f7eef2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.pedroea-popup-card-icon .dashicons {
+    color: #730833;
+    font-size: 20px;
+    width: 20px;
+    height: 20px;
+}
+
+.pedroea-popup-card-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.pedroea-popup-card-title {
+    display: block;
+    font-size: 14px;
+    font-weight: 700;
+    color: #111827;
+    text-decoration: none;
+    margin-bottom: 6px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.pedroea-popup-card-title:hover {
+    color: #730833;
+}
+
+.pedroea-popup-card-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.pedroea-popup-card-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding-top: 12px;
+    border-top: 1px solid #f3f4f6;
+}
+
+.pedroea-popup-card-actions .p-btn-el,
+.pedroea-popup-card-actions .p-btn-secondary {
+    padding: 6px 12px;
+}
+
+.pedroea-popup-delete {
+    margin-left: auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 6px;
+    color: #9ca3af;
+    text-decoration: none;
+    transition: all 0.15s;
+}
+
+.pedroea-popup-delete:hover {
+    background: #fef2f2;
+    color: #dc2626;
+}
+
+.pedroea-popup-wrap .p-empty {
+    grid-column: 1 / -1;
+    padding: 48px 20px;
+}
+
+/* Trigger badges (list cards) */
+.pedroea-popup-type-badge {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 3px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.pedroea-popup-trigger-load {
+    background: #e3f2fd;
+    color: #1565c0;
+}
+
+.pedroea-popup-trigger-scroll {
+    background: #e8f5e9;
+    color: #2e7d32;
+}
+
+.pedroea-popup-trigger-click {
+    background: #fff8e1;
+    color: #f57f17;
+}
+
+.pedroea-popup-trigger-exit {
+    background: #fce4ec;
+    color: #c62828;
+}
+
+@media (max-width: 900px) {
+    .pedroea-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .pedroea-trigger-pills {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

@@ -1,0 +1,272 @@
+/* ===== Widget Manager dashboard ===== */
+
+:root {
+    --pedroea-wm-wine: #730833;
+    --pedroea-wm-wine-deep: #20000d;
+    --pedroea-wm-blush: #d9a8ba;
+    --pedroea-wm-taupe: #916675;
+    --pedroea-wm-ink: #20000d;
+    --pedroea-wm-slate: #64748b;
+    --pedroea-wm-line: #e2e8f0;
+    --pedroea-wm-line-soft: #eef2f7;
+    --pedroea-wm-surface: #ffffff;
+    --pedroea-wm-surface-tint: #fbf7f9;
+    --pedroea-wm-radius: 12px;
+    --pedroea-wm-radius-sm: 8px;
+}
+
+.pedroea-wm-wrap {
+    max-width: 1240px;
+}
+
+.pedroea-wm-hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 20px;
+    padding: 24px 28px;
+    background: var(--pedroea-wm-wine-deep);
+    background-image:
+        radial-gradient(120% 180% at 88% -20%, rgba(217, 168, 186, 0.28), transparent 55%),
+        radial-gradient(90% 160% at 0% 120%, rgba(115, 8, 51, 0.9), transparent 60%),
+        linear-gradient(135deg, #20000d, #730833);
+    border-radius: var(--pedroea-wm-radius);
+    box-shadow: 0 12px 32px -16px rgba(32, 0, 13, 0.55);
+    color: #fff;
+}
+
+.pedroea-wm-hero-title {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.pedroea-wm-hero-title .dashicons {
+    width: 44px;
+    height: 44px;
+    font-size: 44px;
+    color: var(--pedroea-wm-blush);
+}
+
+.pedroea-wm-hero-title h1 {
+    margin: 0 0 4px;
+    color: #fff;
+    font-size: 24px;
+    letter-spacing: -0.01em;
+}
+
+.pedroea-wm-hero-title p {
+    margin: 0;
+    color: var(--pedroea-wm-blush);
+    font-size: 13px;
+    max-width: 56ch;
+    line-height: 1.55;
+}
+
+.pedroea-wm-hero-badge {
+    padding: 6px 12px;
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 0.02em;
+    color: #fff;
+}
+
+.pedroea-wm-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.pedroea-wm-stat {
+    position: relative;
+    padding: 18px 22px;
+    background: var(--pedroea-wm-surface);
+    border: 1px solid var(--pedroea-wm-line);
+    border-left-width: 4px;
+    border-left-color: var(--pedroea-wm-taupe);
+    border-radius: var(--pedroea-wm-radius-sm);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.pedroea-wm-stat:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px -18px rgba(32, 0, 13, 0.35);
+}
+
+.pedroea-wm-stat-enabled {
+    border-left-color: var(--pedroea-wm-wine);
+}
+
+.pedroea-wm-stat-enabled .pedroea-wm-stat-num {
+    color: var(--pedroea-wm-wine);
+}
+
+.pedroea-wm-stat-disabled {
+    border-left-color: var(--pedroea-wm-taupe);
+}
+
+.pedroea-wm-stat-disabled .pedroea-wm-stat-num {
+    color: var(--pedroea-wm-taupe);
+}
+
+.pedroea-wm-stat-num {
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 1.1;
+    color: var(--pedroea-wm-ink);
+    font-variant-numeric: tabular-nums;
+}
+
+.pedroea-wm-stat-label {
+    margin-top: 4px;
+    color: var(--pedroea-wm-slate);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.pedroea-wm-toolbar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 16px;
+}
+
+.pedroea-wm-search {
+    width: 260px;
+}
+
+.pedroea-wm-result-count {
+    color: var(--pedroea-wm-slate);
+    font-size: 12px;
+    font-variant-numeric: tabular-nums;
+}
+
+.pedroea-wm-spacer {
+    flex: 1;
+}
+
+.pedroea-wm-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    gap: 14px;
+}
+
+.pedroea-wm-card {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 16px;
+    background: var(--pedroea-wm-surface);
+    border: 1px solid var(--pedroea-wm-line);
+    border-radius: var(--pedroea-wm-radius-sm);
+    cursor: pointer;
+    transition: border-color 0.15s, box-shadow 0.15s, opacity 0.15s, transform 0.15s ease;
+}
+
+.pedroea-wm-card:hover {
+    border-color: var(--pedroea-wm-wine);
+    box-shadow: 0 4px 16px -10px rgba(115, 8, 51, 0.35);
+}
+
+.pedroea-wm-card:active {
+    transform: scale(0.985);
+}
+
+.pedroea-wm-card input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.pedroea-wm-card:has(input:focus-visible) {
+    outline: 2px solid var(--pedroea-wm-wine);
+    outline-offset: 2px;
+}
+
+.pedroea-wm-card-icon {
+    flex: 0 0 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: #f7eef2;
+    border: 1px solid rgba(115, 8, 51, 0.08);
+    border-radius: 10px;
+    color: var(--pedroea-wm-wine);
+    font-size: 20px;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.pedroea-wm-card-icon .pedro-elementor-icon::after {
+    display: none;
+}
+
+.pedroea-wm-card-title {
+    flex: 1;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.pedroea-wm-card-disabled {
+    opacity: 0.55;
+}
+
+.pedroea-wm-card:hover .pedroea-wm-card-icon {
+    background: var(--pedroea-wm-surface-tint);
+}
+
+.pedroea-wm-card-disabled .pedroea-wm-card-icon {
+    background: #f1f5f9;
+    color: #94a3b8;
+}
+
+.pedroea-wm-switch {
+    position: relative;
+    flex: 0 0 auto;
+    width: 38px;
+    height: 22px;
+    background: #cbd5e1;
+    border-radius: 999px;
+    transition: background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.pedroea-wm-switch-knob {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 18px;
+    height: 18px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 1px 3px rgba(32, 0, 13, 0.3);
+    transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.pedroea-wm-card input:checked ~ .pedroea-wm-switch {
+    background: var(--pedroea-wm-wine);
+    box-shadow: inset 0 1px 3px rgba(32, 0, 13, 0.35);
+}
+
+.pedroea-wm-card input:checked ~ .pedroea-wm-switch .pedroea-wm-switch-knob {
+    transform: translateX(16px);
+}
+
+.pedroea-wm-footer {
+    margin-top: 18px;
+    padding-top: 16px;
+    border-top: 1px solid var(--pedroea-wm-line);
+}
+
+.pedroea-wm-footer .submit {
+    margin: 0;
+    padding: 0;
+}

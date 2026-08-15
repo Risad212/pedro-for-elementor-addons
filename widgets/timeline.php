@@ -193,6 +193,7 @@ class Timeline extends Widget_Base
 				'range'      => [
 					'px' => [
 						'min'  => 0,
+						'max'  => 120,
 						'step' => 1,
 					],
 				],

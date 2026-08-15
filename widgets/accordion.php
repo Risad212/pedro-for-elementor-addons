@@ -457,6 +457,7 @@ class Accordion extends Widget_Base
                 'selectors'   => [
                     '{{WRAPPER}} .pea-accordion-arrow-icon svg' => 'width: {{SIZE}}{{UNIT}}; 
                                                                     height: {{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}} .pea-accordion-arrow-icon i'   => 'font-size: {{SIZE}}{{UNIT}};',
                 ]
             ]
         );
@@ -503,6 +504,7 @@ class Accordion extends Widget_Base
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .pea-accordion-arrow-icon svg' => 'fill: {{VALUE}}',
+                    '{{WRAPPER}} .pea-accordion-arrow-icon i'   => 'color: {{VALUE}}',
                 ],
             ]
         );
@@ -534,6 +536,7 @@ class Accordion extends Widget_Base
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
                     '{{WRAPPER}} .pea-accordion-arrow-icon:hover svg' => 'fill: {{VALUE}}',
+                    '{{WRAPPER}} .pea-accordion-arrow-icon:hover i'   => 'color: {{VALUE}}',
                 ],
             ]
         );
@@ -564,7 +567,8 @@ class Accordion extends Widget_Base
                 'label'     => __('Icon Color', 'pedro-for-elementor-addons'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .pea-accordion-item.active .pea-accordion-arrow-icon' => 'color: {{VALUE}}',
+                    '{{WRAPPER}} .pea-accordion-item.active .pea-accordion-arrow-icon'      => 'color: {{VALUE}}',
+                    '{{WRAPPER}} .pea-accordion-item.active .pea-accordion-arrow-icon svg' => 'fill: {{VALUE}}',
                 ],
             ]
         );
@@ -684,7 +688,7 @@ class Accordion extends Widget_Base
                     <div class="pea-accordion-trigger">
 
                         <div class="pea-accordion-title">
-                            <?php echo esc_html("<{$title_tag}>") . esc_html($item['title']) . esc_html("</{$title_tag}>"); ?>
+                            <<?php echo esc_attr($title_tag); ?>><?php echo esc_html($item['title']); ?></<?php echo esc_attr($title_tag); ?>>
                         </div>
 
                         <div class="pea-accordion-arrow">

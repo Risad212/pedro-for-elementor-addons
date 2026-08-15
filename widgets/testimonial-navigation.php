@@ -4,7 +4,6 @@ namespace PedroEA\Widgets;
 
 use \Elementor\Widget_Base;
 use Elementor\Controls_Manager;
-use Elementor\Utils;
 use Elementor\Icons_Manager;
 
 
@@ -13,7 +12,8 @@ if (! defined('ABSPATH')) {
     exit;
 }
 
-class Testimonial_Navigation extends Widget_Base {
+class Testimonial_Navigation extends Widget_Base
+{
 
     public function get_name()
     {
@@ -41,7 +41,8 @@ class Testimonial_Navigation extends Widget_Base {
     }
 
     // Start content controls
-    protected function register_controls(): void {
+    protected function register_controls(): void
+    {
 
         $this->start_controls_section(
             'section_nav',
@@ -56,7 +57,8 @@ class Testimonial_Navigation extends Widget_Base {
             [
                 'label'       => __('Target Slider ID', 'pedro-for-elementor-addons'),
                 'type'        => Controls_Manager::TEXT,
-                'placeholder' => 'testimonial-slider-1',
+                'placeholder' => 'pea-slider-xxxxxx',
+                'description' => __('Optional. Enter the Testimonial slider ID to link these buttons. Leave empty to auto-connect when there is only one testimonial slider on the page.', 'pedro-for-elementor-addons'),
             ]
         );
 
@@ -93,23 +95,23 @@ class Testimonial_Navigation extends Widget_Base {
         $this->add_responsive_control(
             'button_alignment',
             [
-                'label'             => __( 'Button Alignment', 'pedro-for-elementor-addons' ),
+                'label'             => __('Button Alignment', 'pedro-for-elementor-addons'),
                 'type'              => Controls_Manager::CHOOSE,
                 'options'           => [
                     'flex-start'    => [
-                        'title'     => __( 'Left', 'pedro-for-elementor-addons' ),
+                        'title'     => __('Left', 'pedro-for-elementor-addons'),
                         'icon'      => 'eicon-text-align-left',
                     ],
                     'center'        => [
-                        'title'     => __( 'Center', 'pedro-for-elementor-addons' ),
+                        'title'     => __('Center', 'pedro-for-elementor-addons'),
                         'icon'      => 'eicon-text-align-center',
                     ],
                     'flex-end'      => [
-                        'title'     => __( 'Right', 'pedro-for-elementor-addons' ),
+                        'title'     => __('Right', 'pedro-for-elementor-addons'),
                         'icon'      => 'eicon-text-align-right',
                     ],
                     'space-between' => [
-                        'title'     => __( 'Space Between', 'pedro-for-elementor-addons' ),
+                        'title'     => __('Space Between', 'pedro-for-elementor-addons'),
                         'icon'      => 'eicon-h-align-stretch',
                     ],
                 ],
@@ -143,6 +145,7 @@ class Testimonial_Navigation extends Widget_Base {
                 'default'   => '#ffffff',
                 'selectors' => [
                     '{{WRAPPER}} .pea-nav-icon svg' => 'fill: {{VALUE}};',
+                    '{{WRAPPER}} .pea-nav-icon i'   => 'color: {{VALUE}};',
                 ],
             ]
         );
@@ -181,6 +184,7 @@ class Testimonial_Navigation extends Widget_Base {
                 'default' => ['unit' => 'px', 'size' => 16],
                 'selectors' => [
                     '{{WRAPPER}} .pea-nav-icon svg' => 'width: {{SIZE}}{{UNIT}}; height: {{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}} .pea-nav-icon i'   => 'font-size: {{SIZE}}{{UNIT}};',
                 ],
             ]
         );
@@ -217,35 +221,31 @@ class Testimonial_Navigation extends Widget_Base {
             ]
         );
 
-        $this->end_controls_tabs();
         $this->end_controls_section();
     }
 
-    protected function render(): void {
-       $settings = $this->get_settings_for_display();
-       $target_id = $settings['target_id'];
-    ?>
+    protected function render(): void
+    {
+        $settings = $this->get_settings_for_display();
+        $target_id = $settings['target_id'];
+        $nav_id = ! empty( $target_id ) ? ' id="' . esc_attr( $target_id ) . '"' : '';
+?>
 
-        <?php if ( ! empty( $target_id ) ) : ?>
-            <div class="pea-testimonial-nav" id="<?php echo esc_attr($target_id); ?>">
+        <div class="pea-testimonial-nav"<?php echo $nav_id; // phpcs:ignore WordPress.Security.EscapeOutput ?>>
 
-                <div class="navigation-button pea-button-prev" aria-label="Previous slide">
-                    <span class="pea-icon-prev pea-nav-icon">
-                        <?php Icons_Manager::render_icon($settings['arrow_prev_icon'], ['aria-hidden' => 'true']); ?>
-                    </span>
-                </div>
+            <button type="button" class="navigation-button pea-button-prev" aria-label="<?php esc_attr_e( 'Previous slide', 'pedro-for-elementor-addons' ); ?>">
+                <span class="pea-icon-prev pea-nav-icon">
+                    <?php Icons_Manager::render_icon($settings['arrow_prev_icon'], ['aria-hidden' => 'true']); ?>
+                </span>
+            </button>
 
-                <div class="navigation-button pea-button-next" aria-label="Next slide">
-                    <span class="pea-icon-next pea-nav-icon">
-                        <?php Icons_Manager::render_icon($settings['arrow_next_icon'], ['aria-hidden' => 'true']); ?>
-                    </span>
-                </div>
+            <button type="button" class="navigation-button pea-button-next" aria-label="<?php esc_attr_e( 'Next slide', 'pedro-for-elementor-addons' ); ?>">
+                <span class="pea-icon-next pea-nav-icon">
+                    <?php Icons_Manager::render_icon($settings['arrow_next_icon'], ['aria-hidden' => 'true']); ?>
+                </span>
+            </button>
 
-            </div>
-        <?php else : ?>
-            <p>Navigation ID not set. Buttons will not be displayed.</p>
-        <?php endif; ?>
-        <?php
+        </div>
+<?php
     }
-
 }

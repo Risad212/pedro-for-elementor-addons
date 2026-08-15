@@ -1,0 +1,81 @@
+.pedroea-condition-sub {
+	margin-top: 8px;
+}
+
+.pedroea-condition-label {
+	display: block;
+	font-size: 12px;
+	font-weight: 600;
+	color: #4b5563;
+	margin-bottom: 4px;
+}
+
+.pedroea-condition-hidden {
+	display: none;
+}
+
+.pedroea-specific-picker {
+	position: relative;
+}
+
+.pedroea-specific-search {
+	width: 100%;
+	box-sizing: border-box;
+}
+
+.pedroea-specific-selected {
+	margin-top: 6px;
+}
+
+.pedroea-specific-chip {
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	background: #eef2ff;
+	color: #3730a3;
+	border: 1px solid #c7d2fe;
+	border-radius: 4px;
+	padding: 4px 8px;
+	font-size: 12px;
+	font-weight: 600;
+}
+
+.pedroea-specific-chip .pedroea-specific-remove {
+	text-decoration: none;
+	font-weight: 700;
+	color: #4338ca;
+	line-height: 1;
+}
+
+.pedroea-specific-results {
+	position: absolute;
+	z-index: 20;
+	left: 0;
+	right: 0;
+	top: 100%;
+	margin-top: 4px;
+	background: #ffffff;
+	border: 1px solid #d1d5db;
+	border-radius: 6px;
+	box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+	max-height: 220px;
+	overflow-y: auto;
+}
+
+.pedroea-specific-option {
+	padding: 8px 10px;
+	cursor: pointer;
+	font-size: 13px;
+	border-bottom: 1px solid #f3f4f6;
+}
+
+.pedroea-specific-option:hover {
+	background: #eef2ff;
+}
+
+.pedroea-specific-empty {
+	padding: 10px;
+	font-size: 13px;
+	color: #6b7280;
+	text-align: center;
+}

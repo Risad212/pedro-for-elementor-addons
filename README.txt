@@ -3,8 +3,8 @@ Contributors: hmrisad
 Tags: pedro, elementor, addon, widgets
 Requires at least: 6.6
 Requires PHP: 7.4
-Tested up to: 6.9
-Stable tag: 1.0.5
+Tested up to: 7.0
+Stable tag: 1.0.7
 License: GPL-3.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html 
 
@@ -23,21 +23,24 @@ Enhance your page-building experience with pre-designed widgets and styling opti
 
 == Widgets & Features Included ==
 
-Pedro For Elementor Addons currently provides the following **widgets and features**:
+Pedro For Elementor Addons currently provides the following **widgets and features**
 
-1.  Accordion Widget
-2.  Button Widget
-3.  Team Widget
-4.  Testimonial Widget
-5.  Testimonial Navigation Widget
-6.  Timeline Widget
-7.  Custom CSS – applies global styles across all widgets
-8.  Contact From 7
-9.  Content Switcher
-10. CopyWrite
-11. Filterable Gallery
-12. Post
-13. Site Logo
+✔ Accordion
+✔ Button 
+✔ Team
+✔ Testimonial  
+✔ Testimonial Navigation 
+✔ Timeline
+✔ Custom CSS
+✔ Contact Form 7  
+✔ Content Switcher  
+✔ CopyWrite  
+✔ Filterable Gallery  
+✔ Post  
+✔ Site Logo  
+✔ Ticker  
+✔ Flixbox  
+  
 
 == Installation ==
 
@@ -60,7 +63,15 @@ No, this addon works with the free version of Elementor. It is fully compatible 
 1. Example of custom Elementor widget.
 2. Another example of plugin features.
 
+
+
 == Changelog ==
+
+= 1.0.7 =
+* remove duplicate files, add Flixbox and Ticker widget
+
+= 1.0.6 =
+remove testimonial_navigation.php duplicate file, update tranlation ready code tesimonial navigation button disable message
 
 = 1.0.5 =
 * add contact form 7,content Switcher, filterable gallery, post, site logo, CopyWrite widgets,

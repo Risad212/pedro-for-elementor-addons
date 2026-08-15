@@ -765,8 +765,8 @@ class Team extends Widget_Base {
     ?>
     <div class="pea-team-card">
         <div class="pea-card-img">
-            <img <?php echo wp_kses_post( $this->get_render_attribute_string( 'team_image_attr' ) ); ?>>
-            <div class="pea-social-media">
+            <img <?php echo $this->get_render_attribute_string( 'team_image_attr' ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
+            <div class="pea-social-wrap">
 			<?php if ( ! empty( $settings['show_social_profile'] ) ) : ?>
 			 <ul class="pea-social-media">
                <?php foreach ( $settings['social_list'] as $item ) : ?>
@@ -788,7 +788,8 @@ class Team extends Widget_Base {
 		</div>
         </div>
         <div class="pea-card-content">
-            <h4 class="pea-team-title"><a href="#"><?php echo esc_html( $settings['team_name'] ?? 'Ema Jackson' ); ?></a></h4>
+            <?php $team_title_tag = Utils::validate_html_tag( $settings['title_tag'] ?? 'h2' ); ?>
+            <<?php echo esc_attr( $team_title_tag ); ?> class="pea-team-title"><?php echo esc_html( $settings['team_name'] ?? 'Ema Jackson' ); ?></<?php echo esc_attr( $team_title_tag ); ?>>
             <div class="pea-team-position"><?php echo esc_html( $settings['job_title'] ?? 'Project Manager' ); ?></div>
             <p class="pea-short-disc">
 				<?php echo esc_html( ! empty( $settings['team_bio'] ) ? $settings['team_bio'] : 'A small river named Duden flows by their place and supplies it with the necessary' ); ?>

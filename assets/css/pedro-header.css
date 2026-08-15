@@ -1,0 +1,6 @@
+body.pedroea-header-active header,
+body.pedroea-header-active .site-header,
+body.pedroea-header-active #masthead,
+body.pedroea-header-active .elementor-location-header {
+    display: none !important;
+}

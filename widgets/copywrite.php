@@ -68,18 +68,6 @@ class CopyWrite extends Widget_Base
             ]
         );
 
-        $this->add_control(
-            'year',
-            [
-                'label'       => __('Year', 'pedro-for-elementor-addons'),
-                'type'        => Controls_Manager::TEXT,
-                'default'     => date('Y'),
-                'placeholder' => date('Y'),
-                'label_block' => false,
-                'dynamic'     => ['active' => true],
-            ]
-        );
-
         $this->add_responsive_control(
             'text_align',
             [
@@ -133,7 +121,7 @@ class CopyWrite extends Widget_Base
     protected function render(): void
     {
         $settings = $this->get_settings_for_display();
-        $year     = ! empty( $settings['year'] ) ? sanitize_text_field( $settings['year'] ) : date('Y');
+        $year     = current_time('Y');
 
         $text = str_replace(
             array_keys( $this->get_keywords_map( $year ) ),
@@ -143,7 +131,7 @@ class CopyWrite extends Widget_Base
 
         $this->add_render_attribute('wrapper', 'class', 'pedroea-copywrite');
         ?>
-        <div <?php echo $this->get_render_attribute_string('wrapper'); ?>>
+        <div <?php echo $this->get_render_attribute_string('wrapper'); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
             <?php echo wp_kses_post($text); ?>
         </div>
         <?php

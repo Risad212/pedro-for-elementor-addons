@@ -365,7 +365,7 @@ class Site_Logo extends Widget_Base
         ?>
         <div class="pedroea-site-logo">
             <?php if ($link_url) : ?>
-                <a href="<?php echo $link_url; ?>" target="<?php echo esc_attr($target); ?>" rel="<?php echo ('_blank' === $target) ? 'noopener noreferrer' : ''; ?>">
+                <a href="<?php echo $link_url; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>" target="<?php echo esc_attr($target); ?>"<?php echo ('_blank' === $target) ? ' rel="noopener noreferrer"' : ''; ?>>
                     <img src="<?php echo esc_url($logo_url); ?>" alt="<?php echo esc_attr($logo_alt); ?>">
                 </a>
             <?php else : ?>

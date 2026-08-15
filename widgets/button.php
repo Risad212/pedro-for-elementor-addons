@@ -187,7 +187,7 @@ class Button extends Widget_Base
                 'label'     => __('Text Color', 'pedro-for-elementor-addons'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .pea-button' => 'color: {{VALUE}}',
+                    '{{WRAPPER}} .pea-button:hover' => 'color: {{VALUE}}',
                 ],
             ]
         );
@@ -209,7 +209,7 @@ class Button extends Widget_Base
                 'label'     => __('Button Color', 'pedro-for-elementor-addons'),
                 'type'      => Controls_Manager::COLOR,
                 'selectors' => [
-                    '{{WRAPPER}} .pea-button:hover' => 'border-color: {{VALUE}}',
+                    '{{WRAPPER}} .pea-button:hover' => 'color: {{VALUE}}',
                 ],
             ]
         );
@@ -221,8 +221,13 @@ class Button extends Widget_Base
                 'label'      => __('Transition Duration', 'pedro-for-elementor-addons'),
                 'type'       => Controls_Manager::SLIDER,
                 'size_units' => ['s', 'ms', 'custom'],
+                'range'      => [
+                    's'  => ['min' => 0, 'max' => 2, 'step' => 0.1],
+                    'ms' => ['min' => 0, 'max' => 2000, 'step' => 100],
+                ],
                 'default'    => [
-                    'unit'   => 's',
+                    'size' => 0.3,
+                    'unit' => 's',
                 ],
                 'selectors'  => [
                     '{{WRAPPER}} .pea-button' => 'transition-duration: {{SIZE}}{{UNIT}};',
@@ -292,19 +297,17 @@ class Button extends Widget_Base
 
         // add attribute to a tag
         $this->add_render_attribute('button', 'class', 'pea-button');
-        $this->add_render_attribute('button', 'href', esc_url($settings['button_link']['url']));
-
-        // add new tab attribute
-        $this->add_render_attribute('button', 'target', '_blank');
-        $this->add_render_attribute('button', 'rel', 'noopener noreferrer');
+        if (! empty($settings['button_link']['url'])) {
+            $this->add_link_attributes('button', $settings['button_link']);
+        }
 
         // toggle for switch blend
         if ('yes' === $settings['pea_button_blend_toggle']) {
             $this->add_render_attribute('button_blend', 'style', 'mix-blend-mode: difference;');
         }
 ?>
-        <a <?php echo wp_kses_post($this->get_render_attribute_string('button')); ?>>
-            <span <?php echo wp_kses_post($this->get_render_attribute_string('button_blend')); ?>>
+        <a <?php echo $this->get_render_attribute_string('button'); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
+            <span <?php echo $this->get_render_attribute_string('button_blend'); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
                 <?php echo esc_html($settings['button_text']); ?>
             </span>
         </a>
